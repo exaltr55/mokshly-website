@@ -1,0 +1,1131 @@
+/* Mokshly — restrained, typography-led marketing site.
+ * Palette: warm ink + parchment, deep teal accent.
+ * Type: Cormorant Garamond (serif) for display, Inter for body.
+ */
+
+:root {
+  --ink: #1A1A1A;
+  --ink-soft: #2A2A2A;
+  --muted: #5E5E5E;
+  --subtle: #8A8A8A;
+  --border: #E5E1D8;
+  --rule: #D7D2C5;
+  --bg: #FBF8F1;       /* parchment */
+  --bg-raised: #F4EFE3;
+  --bg-card: #FFFFFF;
+  --accent: #0F2E2A;   /* deep teal */
+  --accent-soft: #1E4742;
+  --accent-bright: #1F6B62;
+
+  --font-serif: 'Fraunces', 'Tiempos Headline', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --maxw: 1280px;
+  --maxw-read: 780px;
+  --maxw-manifesto: 640px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+button { font: inherit; cursor: pointer; }
+
+::selection { background: color-mix(in srgb, var(--accent) 25%, transparent); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin: 0;
+  color: var(--ink);
+  /* Fraunces variable axes — SOFT 0 + WONK 0 = sharper, less curly
+     terminals (closer to Tiempos / GT Sectra than the default playful
+     Fraunces). Optical sizing lets display weights get the more
+     refined drawing while small text stays sturdy. */
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+}
+
+p { margin: 0; }
+
+strong { font-weight: 600; color: var(--ink); }
+
+em { font-style: italic; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+
+/* ── Layout primitives ─────────────────────────────────────── */
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main { flex: 1; }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--read {
+  max-width: var(--maxw-read);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 88px 0;
+  position: relative;
+}
+.section--tight { padding: 64px 0; }
+.section--airy { padding: 104px 0; }
+
+/* Hairline dividers only when two consecutive sections share the same
+ * background — otherwise the color shift already provides separation.
+ * This keeps the vertical rhythm reading as an even cadence of beats
+ * instead of two parchment sections merging into one long empty zone. */
+.section:not(.section--raised):not(.section--ink)
+  + .section:not(.section--raised):not(.section--ink) {
+  border-top: 1px solid var(--rule);
+}
+.section--raised + .section--raised {
+  border-top: 1px solid var(--rule);
+}
+.section--ink + .section--ink {
+  border-top: 1px solid color-mix(in srgb, #FBF8F1 18%, transparent);
+}
+/* Hero is parchment — only divide if the next section is also parchment. */
+.hero + .section:not(.section--raised):not(.section--ink) {
+  border-top: 1px solid var(--rule);
+}
+
+.section--raised { background: var(--bg-raised); }
+
+/* Inverted dark section — literal background color (NOT var(--accent),
+ * because we also re-scope --accent below for descendants and CSS
+ * custom properties resolve at use-time on the same element). All
+ * semantic tokens re-scoped at the overlay root so descendants that
+ * use them inherit readable cream-on-teal contrast. */
+.section--ink {
+  background: #0F2E2A;        /* literal deep teal */
+  color: #F4EFE3;
+  --ink: #FBF8F1;
+  --ink-soft: #F4EFE3;
+  --muted: #C8C2B0;
+  --subtle: #A8A294;
+  --border: #2A4A45;
+  --rule: #2A4A45;
+  --bg-raised: #1A3D38;
+  --bg-card: #1A3D38;
+  --accent: #FBF8F1;          /* invert accent so eyebrows/links read */
+  --accent-soft: #E8E2D2;
+}
+.section--ink,
+.section--ink p,
+.section--ink blockquote,
+.section--ink .lede,
+.section--ink .muted,
+.section--ink .subtle { color: #F4EFE3; }
+.section--ink h1, .section--ink h2, .section--ink h3, .section--ink h4 { color: #FBF8F1; }
+.section--ink a { color: #FBF8F1; }
+.section--ink .attribution { color: #C8C2B0; }
+
+@media (max-width: 720px) {
+  .section { padding: 64px 0; }
+  .section--tight { padding: 48px 0; }
+  .section--airy { padding: 80px 0; }
+}
+
+/* ── Type ──────────────────────────────────────────────────── */
+
+.display-xl { font-size: clamp(40px, 6vw, 68px); line-height: 1.08; letter-spacing: -0.015em; }
+.display-lg { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.12; letter-spacing: -0.01em; }
+.display-md { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.18; }
+.display-sm { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.25; }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+
+.lede {
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+
+.muted { color: var(--muted); }
+.subtle { color: var(--subtle); }
+
+.serif {
+  font-family: var(--font-serif);
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+}
+.italic { font-style: italic; }
+
+/* Apply the same crisp Fraunces tuning everywhere it appears. */
+.manifesto,
+.manifesto h1,
+.manifesto h2,
+.manifesto .closing,
+.signature,
+.commitment h3,
+.commitments-coda,
+.name-row__id,
+.name-row__name,
+.name-list__num,
+.name-list__name,
+.brand,
+.card-number,
+.card .frame-line,
+.pullquote blockquote,
+.trio-item .name {
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+}
+
+/* ── Buttons / CTAs ────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 2px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #FBF8F1;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 160ms ease, transform 160ms ease;
+  text-decoration: none;
+}
+.btn:hover { background: var(--accent-soft); }
+.btn:active { transform: translateY(1px); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+}
+.btn--ghost:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding-bottom: 2px;
+  transition: border-color 160ms ease;
+}
+.link-arrow:hover { border-bottom-color: var(--accent); }
+
+/* ── Header ────────────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  padding: 3px 0;
+  border-bottom: 1px solid transparent;
+}
+.nav a:hover, .nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .site-header__inner { padding: 9px 18px; }
+  .nav { gap: 14px; }
+  .nav a { font-size: 12px; }
+  .brand { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+  .nav a:not(.nav__cta) { display: none; }
+}
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+}
+.nav__cta:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: transparent;
+}
+
+/* Sign-in link routes to the YouSourceful product (separate app). Styled
+ * as a small pill to distinguish it from the marketing nav links. */
+.nav a.nav__signin {
+  margin-left: 4px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+.nav a.nav__signin:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 0 56px;
+  margin-top: 64px;
+}
+
+.site-footer__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.site-footer__links a {
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+}
+.site-footer__links a:hover {
+  color: var(--accent);
+  border-bottom-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.site-footer__legal {
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+
+.hero {
+  padding: 108px 0 80px;
+}
+.hero__inner {
+  max-width: var(--maxw-read);
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+.hero h1 { margin-bottom: 28px; }
+.hero p.lede { margin-bottom: 0; }
+
+/* Two-column split — headline left, supporting subhead right.
+ * Subhead aligns to the bottom of the headline so the two read
+ * as a single visual unit. Stacks on tablet/mobile. */
+.hero__inner--split {
+  max-width: var(--maxw);
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px;
+  align-items: end;
+}
+.hero__inner--split h1 {
+  margin-bottom: 0;
+  max-width: 22ch;
+}
+.hero__inner--split p.lede {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .hero__inner--split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .hero__inner--split p.lede {
+    padding-bottom: 0;
+  }
+  .hero__inner--split h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero { padding: 72px 0 56px; }
+}
+
+/* ── Cards / grids ─────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  gap: 28px;
+}
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--5 { grid-template-columns: repeat(5, 1fr); }
+.grid--7 { grid-template-columns: repeat(7, 1fr); }
+
+@media (max-width: 900px) {
+  .grid--3, .grid--5, .grid--7 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid--2, .grid--3, .grid--5, .grid--7 { grid-template-columns: 1fr; }
+}
+
+.card {
+  padding: 28px 26px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+/* Compact variant — used for Our Offering's three YouSourceful component
+ * cards (5S Framework, 7 Practices, Foursome Peer Structure). Tighter
+ * padding and smaller heading so the three sit side-by-side without
+ * dominating the column. */
+.card--compact {
+  padding: 18px 18px;
+}
+.card--compact h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.card--compact p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.card--quiet {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  padding: 24px 0 0;
+  border-radius: 0;
+}
+
+.card-number {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.card .frame-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent-soft);
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.card p { color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
+
+/* ── Voices Section — distinct card with layered "deck" quotes ─
+ * Card sits in a soft ocean-tinted block on the parchment page, so
+ * the section reads as visually separate from Section 1 (hero) and
+ * Section 3 (challenge). Quotes layer like a deck — each new one
+ * rises from behind onto the front while the previous one recedes
+ * back, briefly visible underneath. */
+.voices-section {
+  padding: 44px 0;
+  background: transparent;
+}
+
+/* The section that follows voices (the Challenge) — reduce its
+ * top padding so the rhythm into Section 3 is tighter. */
+.voices-section + .section {
+  padding-top: 72px;
+}
+
+.voices-section__card {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #EDF3F8 0%, #E0EBF3 100%);
+  border: 1px solid rgba(74, 130, 172, 0.18);
+  border-radius: 14px;
+  padding: 80px 80px 88px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(14, 58, 95, 0.06);
+}
+
+.voices-section__head {
+  margin-bottom: 32px;
+}
+.voices-section__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2A5F8B;
+  margin: 0 0 16px;
+}
+.voices-section__title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #102C46;
+  margin: 0 auto;
+  max-width: 22ch;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+}
+
+.voices-section__stage {
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voices-section__quote-block {
+  /* Single quote in the stage. Content swaps in/out while invisible,
+   * so transitions are sequential (no layering, no z-stacking). */
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.voices-section__quote-block--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.voices-section__quote {
+  margin: 0 0 24px;
+}
+.voices-section__quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.4;
+  color: #102C46;
+  margin: 0;
+  letter-spacing: -0.005em;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+  font-optical-sizing: auto;
+}
+
+.voices-section__attribution {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #4F708C;
+  margin: 0;
+}
+
+/* Progress dots — show how many quotes total, which one is active.
+ * Active dot grows wider into a small bar so the eye reads movement
+ * across the strip as quotes cycle. */
+.voices-section__progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+.voices-section__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(74, 130, 172, 0.28);
+  transition: background 400ms ease, width 400ms ease;
+}
+.voices-section__dot--active {
+  width: 22px;
+  background: #2A5F8B;
+}
+
+@media (max-width: 1080px) {
+  .voices-section { padding: 40px 24px; }
+  .voices-section__card { padding: 56px 40px 64px; }
+}
+
+@media (max-width: 720px) {
+  .voices-section { padding: 32px 16px; }
+  .voices-section__card { padding: 48px 24px 56px; border-radius: 10px; }
+  .voices-section__head { margin-bottom: 40px; }
+  .voices-section__stage { min-height: 260px; }
+  .voices-section__quote-block { max-width: 100%; }
+}
+
+/* ── Outcomes (stacked, equal weight) ─────────────────────── */
+
+.outcomes {
+  display: grid;
+  gap: 36px;
+}
+.outcome h3 {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-bottom: 6px;
+}
+.outcome p { color: var(--ink-soft); font-size: 16px; line-height: 1.55; }
+
+/* ── Pull quote ───────────────────────────────────────────── */
+
+.pullquote {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.pullquote blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+}
+.pullquote .attribution {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin-bottom: 28px;
+}
+
+/* ── Section heads ─────────────────────────────────────────── */
+
+.section-head { margin-bottom: 48px; }
+.section-head h2 { margin-bottom: 18px; }
+.section-head p.lede { max-width: 60ch; }
+
+/* ── Manifesto ─────────────────────────────────────────────── */
+
+.manifesto {
+  max-width: var(--maxw-manifesto);
+  margin: 0 auto;
+  padding: 0 24px;
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.65;
+  color: #000000;
+}
+
+.manifesto h1 {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.manifesto h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.6vw, 30px);
+  font-weight: 500;
+  margin: 0 0 56px;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.manifesto .stanza {
+  margin: 0 0 32px;
+}
+
+.manifesto .stanza p { margin: 0 0 4px; }
+
+.manifesto .keyword {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.manifesto .closing {
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 28px);
+  color: var(--ink);
+  margin-top: 56px;
+}
+
+.signature {
+  font-family: var(--font-serif);
+  font-style: italic;
+  margin-top: 20px;
+  color: var(--ink-soft);
+}
+.signature p { margin: 0; }
+
+/* ── Commitments (About page) ──────────────────────────────── */
+
+.commitments {
+  display: grid;
+  gap: 56px;
+}
+.commitment h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.commitment p {
+  color: var(--ink-soft);
+  font-size: 16.5px;
+  line-height: 1.65;
+  max-width: 64ch;
+  margin-bottom: 12px;
+}
+.commitment p:last-child { margin-bottom: 0; }
+.commitment .kicker {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink);
+  margin-top: 14px;
+  font-size: 16px;
+}
+.commitment__list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  display: grid;
+  gap: 6px;
+}
+.commitment__list li {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.55;
+}
+.commitment__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 1px;
+  background: var(--accent);
+}
+.commitment__list em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.commitments-coda {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(19px, 2vw, 22px);
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 56ch;
+}
+
+/* Lighter coda for homepage curiosity hooks — italic editorial line
+ * without the horizontal rule + heavy spacing of commitments-coda
+ * (which is sized for the About page's full declaration). */
+.hook-coda {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.5;
+  color: var(--ink);
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+/* ── Principles ────────────────────────────────────────────── */
+
+.principles {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 720px) { .principles { grid-template-columns: 1fr; } }
+
+.principle {
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.principle h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.principle p { color: var(--ink-soft); font-size: 16px; line-height: 1.6; margin-bottom: 10px; }
+.principle p:last-child { margin-bottom: 0; }
+.principle__lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px !important;
+  color: var(--ink) !important;
+  line-height: 1.45 !important;
+}
+
+/* ── Forms (Contact) ──────────────────────────────────────── */
+
+.form {
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+}
+.field { display: grid; gap: 6px; }
+.field label {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.field input, .field select, .field textarea {
+  font: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field--full { grid-column: 1 / -1; }
+
+.form__success {
+  padding: 18px 20px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-raised));
+  border-left: 3px solid var(--accent);
+  font-size: 15px;
+}
+
+/* ── Legal pages ───────────────────────────────────────────── */
+
+.legal {
+  max-width: var(--maxw-read);
+  margin: 0 auto;
+  padding: 80px 24px 64px;
+}
+.legal h1 { font-size: clamp(34px, 4vw, 44px); margin-bottom: 8px; }
+.legal .updated {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--subtle);
+  margin-bottom: 36px;
+}
+.legal h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 40px 0 12px;
+  scroll-margin-top: 88px;
+}
+.legal h3 {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  margin: 22px 0 8px;
+}
+.legal p { margin: 0 0 14px; line-height: 1.7; color: var(--ink-soft); }
+.legal ul { padding-left: 22px; margin: 6px 0 14px; }
+.legal li { margin-bottom: 6px; color: var(--ink-soft); }
+.legal a { color: var(--accent); border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+
+.legal .in-short {
+  padding: 22px 24px;
+  background: var(--bg-raised);
+  border-left: 3px solid var(--accent);
+  margin: 0 0 40px;
+  font-size: 16px;
+}
+.legal .in-short h2 {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.legal .in-short p { margin: 0 0 10px; color: var(--ink); }
+.legal .in-short p:last-child { margin-bottom: 0; }
+
+/* ── Name row / list (Offering teasers) ────────────────────
+ * Used on Our Offering to NAME the 5S elements and 7 Practices without
+ * revealing their substance — that lives behind the registered-user
+ * wall in YouSourceful and in conversation with the Mokshly team. */
+
+.name-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+@media (max-width: 720px) {
+  .name-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .name-row { grid-template-columns: 1fr; }
+}
+.name-row__item {
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+.name-row__id {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+.name-row__name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.name-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.name-list__item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.name-list__num {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  min-width: 36px;
+}
+.name-list__name {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* ── Feature list (Offering deployment + enterprise) ──────
+ * Vertical list of feature title + description inside the reading
+ * column. Keeps the platform/enterprise sections rhythmically
+ * consistent with the surrounding 720px-ish reading column. */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.feature-list__item {
+  display: grid;
+  gap: 4px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.feature-list__item h3 {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+.feature-list__item p {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Trio (homepage "what Mokshly is") ────────────────────── */
+
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+@media (max-width: 560px) { .trio { grid-template-columns: 1fr; } }
+.trio-item {
+  padding: 14px 16px;
+  background: var(--bg-raised);
+  border-left: 2px solid var(--accent);
+}
+.trio-item .label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 4px;
+  font-weight: 500;
+}
+.trio-item .name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+}
+/* trio--compact is on by default now; modifier retained for future tuning */
+.trio--compact { gap: 12px; }
+.trio--compact .trio-item { padding: 12px 14px; }
+.trio--compact .trio-item .name { font-size: 15.5px; }
+
+/* ── Founder note ──────────────────────────────────────────── */
+
+.founder-note {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.founder-note p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 16px; }
+.founder-note .sig {
+  font-family: var(--font-serif);
+  font-style: italic;
+  margin: 32px 0 24px;
+  color: var(--ink);
+}
+.founder-note .sig p { margin: 0; }
+
+/* ── Utility ──────────────────────────────────────────────── */
+
+.center { text-align: center; }
+.mt-sm { margin-top: 16px; }
+.mt-md { margin-top: 28px; }
+.mt-lg { margin-top: 48px; }
+.mt-xl { margin-top: 72px; }
+.mb-sm { margin-bottom: 16px; }
+.mb-md { margin-bottom: 28px; }
+
+.divider-soft {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  margin: 24px 0;
+}
+
+/* Accessibility — visible focus rings */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

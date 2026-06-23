@@ -1,0 +1,28 @@
+<!doctype html>
+<!--
+  GitHub Pages serves this file for any path it can't find as a static
+  file. Because this is a Vite SPA using BrowserRouter, deep links
+  (e.g., /about) would otherwise hit this 404. The inline script
+  below redirects to the root index, preserving the path + query
+  in a single ?p= param so the React app can restore the route on
+  arrival.
+
+  Pair with the matching unpack snippet in index.html's <head>.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      (function () {
+        var l = window.location;
+        var rest = l.pathname.slice(1) + (l.search ? '?' + l.search.slice(1) : '');
+        l.replace(
+          l.origin + '/?p=' + encodeURIComponent(rest) +
+          (l.hash || '')
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
