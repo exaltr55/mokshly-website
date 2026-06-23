@@ -12,13 +12,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta http-equiv="refresh" content="0; url=/mokshly-website/" />
     <script>
+      // Keep this in sync with `base` in vite.config.ts. The leading
+      // slash + trailing slash form is required so we can both strip
+      // the base from the request path and reconstruct the redirect
+      // target correctly.
+      var BASE = '/mokshly-website/';
       (function () {
         var l = window.location;
-        var rest = l.pathname.slice(1) + (l.search ? '?' + l.search.slice(1) : '');
+        var path = l.pathname.indexOf(BASE) === 0
+          ? l.pathname.slice(BASE.length)
+          : l.pathname.replace(/^\//, '');
+        var rest = path + (l.search ? '?' + l.search.slice(1) : '');
         l.replace(
-          l.origin + '/?p=' + encodeURIComponent(rest) +
+          l.origin + BASE + '?p=' + encodeURIComponent(rest) +
           (l.hash || '')
         );
       })();
