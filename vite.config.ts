@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Served at https://exaltr55.github.io/mokshly-website/ on GitHub Pages
-// (project site, not a user/org site), so all built asset URLs must be
-// prefixed with the repo name. When we later add a custom domain that
-// serves from the root, drop `base` back to '/'.
+// Served on the custom domain https://mokshly.com from the root, so assets
+// are referenced from '/'. (Previously a project site at
+// https://exaltr55.github.io/mokshly-website/, which required
+// base: '/mokshly-website/'. The bare github.io project URL no longer works.)
 export default defineConfig({
   plugins: [react()],
-  base: '/mokshly-website/',
+  base: '/',
   server: { port: 5173, strictPort: false },
 });
