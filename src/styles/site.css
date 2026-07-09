@@ -324,8 +324,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   background: transparent;
 }
 
-/* Sign-in link routes to the YouSourceful product (separate app). Styled
- * as a small pill to distinguish it from the marketing nav links. */
+/* Sign-in link routes to the /signin greeting page (YouSourceful isn't open
+ * yet). Styled as a small pill to distinguish it from the marketing nav links. */
 .nav a.nav__signin {
   margin-left: 4px;
   padding: 5px 12px;

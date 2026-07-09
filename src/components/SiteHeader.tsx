@@ -1,11 +1,5 @@
 import { NavLink, Link } from 'react-router-dom';
 
-// In production, set VITE_YOUSOURCEFUL_URL to the deployed YouSourceful URL
-// (e.g., https://app.mokshly.com or https://yousourceful.com).
-const YOUSOURCEFUL_BASE_URL =
-  import.meta.env.VITE_YOUSOURCEFUL_URL ?? 'http://localhost:3000';
-const YOUSOURCEFUL_SIGNIN_URL = `${YOUSOURCEFUL_BASE_URL}/login`;
-
 export default function SiteHeader() {
   return (
     <header className="site-header">
@@ -26,13 +20,13 @@ export default function SiteHeader() {
           <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
             Contact
           </NavLink>
-          <a
-            href={YOUSOURCEFUL_SIGNIN_URL}
+          <NavLink
+            to="/signin"
             className="nav__signin"
             aria-label="Sign in to YouSourceful"
           >
             Sign in
-          </a>
+          </NavLink>
         </nav>
       </div>
     </header>

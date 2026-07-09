@@ -6,6 +6,7 @@ import OurOffering from './pages/OurOffering';
 import About from './pages/About';
 import Manifesto from './pages/Manifesto';
 import Contact from './pages/Contact';
+import SignIn from './pages/SignIn';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/manifesto" element={<Manifesto />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/terms-of-use" element={<Terms />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
