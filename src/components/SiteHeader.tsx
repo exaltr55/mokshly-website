@@ -17,9 +17,6 @@ export default function SiteHeader() {
           <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
             About
           </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
-            Contact
-          </NavLink>
           <NavLink
             to="/signin"
             className="nav__signin"
