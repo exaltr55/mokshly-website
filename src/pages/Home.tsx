@@ -162,7 +162,7 @@ export default function Home() {
           </p>
           <p className="lede mb-md">
             The foundational human capabilities that help people navigate change —
-            awareness, judgment, adaptability, collaboration, resilience and
+            self-awareness, judgment, adaptability, collaboration, resilience and
             sustainable well-being — are becoming more consequential.
           </p>
           <Link to="/manifesto" className="link-arrow">
