@@ -2,51 +2,46 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-/* Short voices — max 10 words each, in the Anthropic-style cadence.
- * Each one starts with "I'm" so they echo the I AM language of the
- * practice. Five voice the concern; two voice the shift. */
-const VOICES: Array<{ text: string; role: string; industry: string; tone: 'concern' | 'shift' }> = [
+/* Short leader voices heard "in the halls" — each surfaces the tension that
+ * one of the six foundational capabilities answers, in canonical order:
+ * self-awareness, judgment, adaptability, collaboration, resilience,
+ * sustainable well-being. The `capability` field is the mapping (not shown). */
+const VOICES: Array<{ text: string; role: string; industry: string; capability: string }> = [
   {
-    text: "My team is stressed and distracted. The future feels uncertain.",
-    role: 'Director of Engineering',
-    industry: 'Technology',
-    tone: 'concern',
+    text: "We move so fast now, I barely notice my own assumptions before I act.",
+    role: 'Managing Director',
+    industry: 'Financial Services',
+    capability: 'Self-awareness',
   },
   {
-    text: "My role is evolving. What comes next is uncertain.",
-    role: 'Senior Manager',
-    industry: 'Public Accounting',
-    tone: 'concern',
+    text: "AI hands me an answer in seconds. Knowing when to trust it is the hard part.",
+    role: 'Head of Risk',
+    industry: 'Banking',
+    capability: 'Judgment',
   },
   {
-    text: "The tools keep changing faster than I can adapt.",
+    text: "The way we work gets rewritten every quarter, and we start over.",
     role: 'Engineering Lead',
-    industry: 'IT',
-    tone: 'concern',
+    industry: 'Technology',
+    capability: 'Adaptability',
   },
   {
-    text: "I worry today's expertise won't matter tomorrow.",
-    role: 'Senior Partner',
-    industry: 'Law',
-    tone: 'concern',
+    text: "My team works alongside AI agents now — no one taught us how.",
+    role: 'VP Operations',
+    industry: 'Manufacturing',
+    capability: 'Collaboration',
   },
   {
-    text: "My people need certainty, but everything keeps shifting.",
-    role: 'Director',
-    industry: 'Consulting',
-    tone: 'concern',
+    text: "We absorb one disruption and the next is already here.",
+    role: 'Chief Operating Officer',
+    industry: 'Healthcare',
+    capability: 'Resilience',
   },
   {
-    text: "Every quarter demands capabilities I didn't need before.",
-    role: 'Senior Director',
-    industry: 'Public Accounting',
-    tone: 'concern',
-  },
-  {
-    text: "I feel exhausted before transformation has even begun.",
+    text: "My best people are exhausted, and the pace never lets up.",
     role: 'Chief People Officer',
     industry: 'Consulting',
-    tone: 'concern',
+    capability: 'Sustainable Well-being',
   },
 ];
 
