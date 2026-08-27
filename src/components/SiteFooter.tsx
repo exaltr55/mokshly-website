@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 export default function SiteFooter() {
   return (
@@ -6,7 +7,7 @@ export default function SiteFooter() {
       <div className="site-footer__inner">
         <div className="site-footer__top">
           <div>
-            <p className="brand" style={{ marginBottom: 4 }}>Mokshly</p>
+            <div style={{ marginBottom: 6 }}><Logo height={22} /></div>
             <p className="subtle" style={{ fontSize: 13, margin: 0 }}>
               A Human Capability Infrastructure Company.
             </p>

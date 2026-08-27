@@ -280,6 +280,26 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   color: #000;
 }
 
+/* ── Logo lockup (ring-and-wave mark + MOKSHLY wordmark) ─────── */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+.logo__mark { display: block; flex-shrink: 0; }
+.logo__word {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--accent);
+}
+@media (max-width: 720px) {
+  .logo__word { font-size: 18px; letter-spacing: 0.06em; }
+}
+
 .nav {
   display: flex;
   align-items: center;
