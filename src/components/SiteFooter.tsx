@@ -21,7 +21,7 @@ export default function SiteFooter() {
           </nav>
         </div>
         <p className="site-footer__legal">
-          © {new Date().getFullYear()} Mokshly LLC. All rights reserved.
+          © {new Date().getFullYear()} Mokshly PBC. All rights reserved.
         </p>
       </div>
     </footer>

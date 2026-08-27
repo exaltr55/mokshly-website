@@ -26,7 +26,7 @@ export default function Privacy() {
 
         <h2 id="intro">1. Introduction</h2>
         <p>
-          This Privacy Policy explains how Mokshly LLC ("Mokshly," "we," "our,"
+          This Privacy Policy explains how Mokshly PBC ("Mokshly," "we," "our,"
           or "us") collects, uses, and protects information relating to visitors
           of mokshly.com.
         </p>
@@ -141,7 +141,7 @@ export default function Privacy() {
         <p>We may update this Privacy Policy from time to time.</p>
 
         <h2 id="contact">13. Contact</h2>
-        <p>Mokshly LLC</p>
+        <p>Mokshly PBC</p>
         <p>
           <a href="mailto:support@mokshly.com">support@mokshly.com</a>
         </p>

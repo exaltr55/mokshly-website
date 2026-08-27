@@ -14,7 +14,7 @@ export default function Terms() {
 
         <p>Welcome to Mokshly.</p>
         <p>
-          Mokshly LLC ("Mokshly," "we," "our," or "us") operates this website
+          Mokshly PBC ("Mokshly," "we," "our," or "us") operates this website
           ("Site") to provide information about our Human Capability
           Infrastructure platform, methodologies, and enterprise offerings.
         </p>
@@ -66,7 +66,7 @@ export default function Terms() {
           name, YouSourceful, the 5S Framework, the 7 Practices, the Consistency
           Index, the Foursome Peer Structure, text, graphics, design,
           methodologies, software, visual elements, and related materials are
-          owned by or licensed to Mokshly LLC and are protected under applicable
+          owned by or licensed to Mokshly PBC and are protected under applicable
           intellectual property laws.
         </p>
         <p>The Mokshly methodology and related frameworks are proprietary intellectual property.</p>
@@ -141,7 +141,7 @@ export default function Terms() {
         <p>These Terms shall be governed by the laws of the State of California.</p>
 
         <h2 id="contact">13. Contact</h2>
-        <p>Mokshly LLC</p>
+        <p>Mokshly PBC</p>
         <p>
           <a href="mailto:support@mokshly.com">support@mokshly.com</a>
         </p>
