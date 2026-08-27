@@ -9,7 +9,7 @@ export default function Privacy() {
       />
       <div className="legal">
         <h1>Privacy Policy</h1>
-        <p className="updated">Last Updated: January 1, 2026</p>
+        <p className="updated">Last Updated: August 27, 2026</p>
 
         <div className="in-short">
           <h2>In Short</h2>

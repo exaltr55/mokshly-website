@@ -10,7 +10,7 @@ export default function Terms() {
       />
       <div className="legal">
         <h1>Terms of Use</h1>
-        <p className="updated">Last Updated: January 1, 2026</p>
+        <p className="updated">Last Updated: August 27, 2026</p>
 
         <p>Welcome to Mokshly.</p>
         <p>
@@ -138,7 +138,7 @@ export default function Terms() {
         </p>
 
         <h2 id="law">12. Governing Law</h2>
-        <p>These Terms shall be governed by the laws of the State of California.</p>
+        <p>These Terms shall be governed by the laws of the State of Delaware.</p>
 
         <h2 id="contact">13. Contact</h2>
         <p>Mokshly PBC</p>
