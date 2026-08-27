@@ -68,7 +68,7 @@ const STANZAS_AFTER: (string | string[])[] = [
     'Because you cannot navigate increasing complexity without judgment.',
     'You cannot absorb continuous change without adaptability.',
     'You cannot build enduring institutions without collaboration, resilience, and well-being.',
-    'And you cannot exercise any of these fully without awareness.',
+    'And you cannot exercise any of these fully without Awareness.',
   ],
   'When foundational human capabilities strengthen, something larger becomes possible.',
   [
@@ -85,7 +85,7 @@ const STANZAS_AFTER: (string | string[])[] = [
     'But to strengthen what is distinctly human.',
   ],
   [
-    'To become more aware as intelligence expands.',
+    'To become more self-aware as intelligence expands.',
     'More adaptable as change accelerates.',
     'More discerning as choices multiply.',
     'More collaborative as boundaries shift.',
