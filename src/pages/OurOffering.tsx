@@ -19,8 +19,8 @@ const PLATFORM = [
   ],
   [
     '03 — Measure',
-    'Track whether practice is becoming consistent and capability is strengthening over time.',
-    'Consistency Index provides individuals with a private view of their practice. HCIx gives organizations an aggregate measure of foundational human capability — without exposing individual data.',
+    'See whether practice is becoming consistent and capability is strengthening over time.',
+    'A private view for the individual; an aggregate view for the organization — without exposing individual data.',
   ],
 ];
 
@@ -82,28 +82,23 @@ export default function OurOffering() {
         </div>
       </section>
 
-      {/* 3 — YouSourceful */}
+      {/* 3 — YouSourceful: the platform (Baseline · Practice · Measure) */}
       <section className="section">
         <div className="container--read">
           <p className="eyebrow">YouSourceful</p>
           <h2 className="display-lg mb-md">
             The platform for Human Capability Infrastructure.
           </h2>
-          <p className="lede">
-            YouSourceful helps organizations baseline, strengthen and measure
-            foundational human capabilities — continuously and at scale.
-          </p>
-        </div>
-      </section>
-
-      {/* 4 — The Mokshly Platform: Baseline. Practice. Measure. */}
-      <section className="section section--raised">
-        <div className="container--read">
-          <p className="eyebrow">The Mokshly Platform</p>
-          <h2 className="display-lg mb-md">Baseline. Practice. Measure.</h2>
           <p className="lede mb-md">
-            Mokshly turns human capability development from an occasional
-            intervention into continuous infrastructure.
+            YouSourceful turns human capability development from an occasional
+            intervention into continuous infrastructure — organized around a
+            simple loop that runs at scale:
+          </p>
+          <p
+            className="serif"
+            style={{ fontSize: 'clamp(20px, 2vw, 24px)', color: 'var(--accent)', fontWeight: 500, marginBottom: 8 }}
+          >
+            Baseline. Practice. Measure.
           </p>
 
           <div className="grid grid--3 mt-lg">
@@ -118,8 +113,8 @@ export default function OurOffering() {
         </div>
       </section>
 
-      {/* 5 — The Foundation */}
-      <section className="section">
+      {/* 4 — The Foundation */}
+      <section className="section section--raised">
         <div className="container--read">
           <p className="eyebrow">The Foundation</p>
           <h2 className="display-lg mb-md">Awareness becomes practice.</h2>
@@ -138,8 +133,8 @@ export default function OurOffering() {
         </div>
       </section>
 
-      {/* 6 — Enterprise Infrastructure */}
-      <section className="section section--raised">
+      {/* 5 — Enterprise Infrastructure */}
+      <section className="section">
         <div className="container--read">
           <p className="eyebrow">Enterprise Infrastructure</p>
           <h2 className="display-lg mb-md">
@@ -163,8 +158,8 @@ export default function OurOffering() {
         </div>
       </section>
 
-      {/* 7 — Measurement */}
-      <section className="section">
+      {/* 6 — Measurement (the one place Consistency Index vs HCIx is defined) */}
+      <section className="section section--raised">
         <div className="container--read">
           <p className="eyebrow">Measurement</p>
           <h2 className="display-lg mb-md">From participation to capability.</h2>
@@ -191,7 +186,7 @@ export default function OurOffering() {
         </div>
       </section>
 
-      {/* 8 — Outcomes */}
+      {/* 7 — Outcomes */}
       <section className="section section--airy section--raised">
         <div className="container--read center">
           <p className="eyebrow">Outcomes</p>
