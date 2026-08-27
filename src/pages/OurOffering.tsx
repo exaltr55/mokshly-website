@@ -201,27 +201,20 @@ export default function OurOffering() {
           <p className="eyebrow">Outcomes</p>
           <h2 className="display-lg mb-md">Stronger people. More adaptable institutions.</h2>
           <p className="lede mb-md" style={{ margin: '0 auto 20px' }}>
-            Enterprises are already making two investments for the age of AI:
-            the technology itself, and training their people to use it. The
-            return on both depends on a third — building the foundational human
-            capabilities that determine how well people put that technology and
-            training to work.
+            Enterprises are making two investments for the age of AI — the
+            technology, and training people to use it. The return on both
+            depends on a third: the foundational human capabilities that put
+            them to work.
           </p>
-          <p className="lede mb-md" style={{ margin: '0 auto 24px' }}>
-            That is the investment Mokshly makes possible. As those capabilities
-            strengthen, organizations become better equipped to navigate
-            continuous change:
+          <p className="lede mb-md" style={{ margin: '0 auto 28px' }}>
+            That is the investment Mokshly makes possible.
           </p>
           <p
             className="serif"
-            style={{ fontSize: 'clamp(20px, 2vw, 24px)', color: 'var(--ink)', lineHeight: 1.5, marginBottom: 32 }}
+            style={{ fontSize: 'clamp(20px, 2vw, 24px)', color: 'var(--ink)', lineHeight: 1.5, marginBottom: 36 }}
           >
             Greater adaptability. Better judgment. Stronger collaboration.
             More resilient people. Sustainable performance.
-          </p>
-          <p className="lede mb-md" style={{ margin: '0 auto 32px' }}>
-            The goal is not simply to prepare people for the next change. It is
-            to strengthen their capacity for whatever comes after it.
           </p>
           <Link to="/contact#enterprise" className="btn">
             Bring Human Capability Infrastructure to your organization
