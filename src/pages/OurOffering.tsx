@@ -15,7 +15,7 @@ const PLATFORM = [
   [
     '02 — Practice',
     'Capability is built through practice, not content alone.',
-    'Seven foundational practices help people bring greater awareness and intentionality into everyday life — at work and beyond it.',
+    'Seven foundational practices help people bring greater Awareness and intentionality into everyday life — at work and beyond it.',
   ],
   [
     '03 — Measure',

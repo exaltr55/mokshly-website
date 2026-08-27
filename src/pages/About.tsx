@@ -9,8 +9,8 @@ const PRINCIPLES: Array<[string, string, string]> = [
   ],
   [
     'Awareness',
-    'Better choices begin with greater awareness.',
-    'We respond from awareness, not reaction.',
+    'Better choices begin with greater Awareness.',
+    'We respond from Awareness, not reaction.',
   ],
   [
     'Responsibility',
