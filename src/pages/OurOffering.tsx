@@ -200,9 +200,17 @@ export default function OurOffering() {
         <div className="container--read center">
           <p className="eyebrow">Outcomes</p>
           <h2 className="display-lg mb-md">Stronger people. More adaptable institutions.</h2>
+          <p className="lede mb-md" style={{ margin: '0 auto 20px' }}>
+            Enterprises are already making two investments for the age of AI:
+            the technology itself, and training their people to use it. The
+            return on both depends on a third — building the foundational human
+            capabilities that determine how well people put that technology and
+            training to work.
+          </p>
           <p className="lede mb-md" style={{ margin: '0 auto 24px' }}>
-            As foundational capabilities strengthen, organizations become better
-            equipped to navigate continuous change.
+            That is the investment Mokshly makes possible. As those capabilities
+            strengthen, organizations become better equipped to navigate
+            continuous change:
           </p>
           <p
             className="serif"
