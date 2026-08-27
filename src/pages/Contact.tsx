@@ -23,9 +23,9 @@ export default function Contact() {
         <div className="container--read">
           <h1 className="display-xl mb-md">Get in touch</h1>
           <p className="lede">
-            If your organization is looking to strengthen your people for
-            the age of AI — or if you'd like to understand our work more
-            deeply — we welcome the conversation.
+            Whether you're strengthening your people for the age of AI, or
+            simply want to understand our work more deeply, we welcome the
+            conversation.
           </p>
         </div>
       </section>
@@ -36,9 +36,9 @@ export default function Contact() {
           <p className="eyebrow">For Enterprises</p>
           <h2 className="display-lg mb-md">Schedule a Leadership Conversation</h2>
           <p className="lede mb-md">
-            If your organization is navigating AI-driven transformation and
-            exploring how to strengthen your workforce through it, we welcome a
-            leadership conversation.
+            If your organization is investing in AI — the technology and the
+            training to use it — and wants to maximize the return on both, we
+            welcome a leadership conversation.
           </p>
           <p className="lede" style={{ marginBottom: 36 }}>
             Conversations typically begin with 30 minutes — understanding your
