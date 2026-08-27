@@ -105,7 +105,7 @@ export default function OurOffering() {
             {PLATFORM.map(([title, lead, body]) => (
               <div key={title} className="card card--compact">
                 <h3>{title}</h3>
-                <p style={{ fontWeight: 500 }}>{lead}</p>
+                <p>{lead}</p>
                 <p>{body}</p>
               </div>
             ))}
