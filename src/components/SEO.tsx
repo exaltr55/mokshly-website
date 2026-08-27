@@ -6,7 +6,7 @@ interface Props {
 }
 
 const DEFAULT_DESCRIPTION =
-  'Mokshly is a Human Sustainability Company. Human Capability Infrastructure for the AI Era.';
+  'Mokshly is a Human Capability Infrastructure Company — strengthening the foundational human capabilities people need to thrive alongside AI.';
 
 /** Lightweight per-page SEO — sets <title> and the most important
  *  meta tags via DOM. Avoids pulling in react-helmet for a small site. */

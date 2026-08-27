@@ -124,7 +124,7 @@ function VoicesSection() {
 export default function Home() {
   return (
     <>
-      <SEO title="Mokshly — Human Sustainability Infrastructure for the AI Era" />
+      <SEO title="Mokshly — Human Capability Infrastructure for the AI Era" />
 
       {/* 1 — Hero: two-column split. Headline left, supporting subhead
           right (stacks on mobile). No CTA — the page pulls the reader down. */}
@@ -155,15 +155,15 @@ export default function Home() {
       <section className="section section--raised">
         <div className="container--read">
           <h2 className="display-lg mb-md">
-            AI is reshaping knowledge work faster than your people can absorb it.
+            AI is reshaping knowledge work faster than people can absorb it.
           </h2>
           <p className="lede mb-md">
-            Roles are being rewritten. Uncertainty about their career grows.
-            The foundational human capabilities that hold a workforce together
-            through the largest transformation of work in a generation —
-            clarity, judgment, steadiness, resilience — can not be addressed
-            by a training program or an app. They have to be built as
-            infrastructure.
+            Roles are changing. Expectations are shifting. Uncertainty is growing.
+          </p>
+          <p className="lede mb-md">
+            The foundational human capabilities that help people navigate change —
+            awareness, judgment, adaptability, collaboration, resilience and
+            sustainable well-being — are becoming more consequential.
           </p>
           <Link to="/manifesto" className="link-arrow">
             Read our perspective on this moment →
@@ -171,57 +171,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 — The answer: Human Sustainability Infrastructure */}
+      {/* 4 — The answer: Human Capability Infrastructure */}
       <section className="section">
         <div className="container--read">
           <h2 className="display-lg mb-md">
-            Human Sustainability Infrastructure for the AI Era.
+            Human Capability Infrastructure for the AI Era.
           </h2>
-          <p className="lede">
-            Mokshly helps organizations systematically develop foundational
-            human capabilities across their workforce. Its engine is the{' '}
-            <strong>YouSourceful</strong> system — three reinforcing elements
-            that move as one: a framework to see clearly, a practice to
-            cultivate awareness, and a peer structure to keep the rhythm going.
+          <p className="lede mb-md">
+            Mokshly helps organizations systematically <strong>baseline,
+            strengthen and measure</strong> the foundational human capabilities
+            their people need to thrive alongside AI.
           </p>
-
-          <div className="trio trio--compact">
-            <div className="trio-item">
-              <p className="label">Framework</p>
-              <p className="name">The 5S Framework</p>
-            </div>
-            <div className="trio-item">
-              <p className="label">Practice</p>
-              <p className="name">The 7 Practices</p>
-            </div>
-            <div className="trio-item">
-              <p className="label">Structure</p>
-              <p className="name">The Foursome Peer Structure</p>
-            </div>
-          </div>
-
+          <p className="lede">
+            Built not as another training program, but as infrastructure for
+            continuous human development.
+          </p>
           <p className="mt-lg">
-            <Link to="/our-offering" className="link-arrow">Explore YouSourceful →</Link>
+            <Link to="/our-offering" className="link-arrow">Explore our approach →</Link>
           </p>
         </div>
       </section>
 
-      {/* 4 — Enterprise grade (no fixed number — scale is open-ended) */}
+      {/* 5 — Enterprise grade */}
       <section className="section section--raised">
         <div className="container--read">
           <p className="eyebrow">Enterprise-Grade</p>
           <h2 className="display-lg mb-md">
-            Designed to embed at scale — without losing depth.
+            Built for the enterprise. Designed for people.
           </h2>
           <p className="lede mb-md">
-            The YouSourceful system embeds across your enterprise — at any
-            scale, across every function and geography you operate in. It runs
-            as institutional infrastructure: structured onboarding,
-            privacy-first aggregate reporting, and long-term adoption
-            tracking — built for lasting integration.
+            Mokshly integrates across functions, geographies and existing
+            learning ecosystems — while protecting individual privacy and
+            giving organizations a measurable view of human capability over
+            time.
           </p>
-          <Link to="/our-offering#deployment" className="link-arrow">
-            How YouSourceful is deployed →
+          <Link to="/our-offering" className="link-arrow">
+            See how Mokshly works →
           </Link>
         </div>
       </section>
@@ -234,15 +219,11 @@ export default function Home() {
             Purpose, by design.
           </h2>
           <p className="lede mb-md">
-            For Mokshly, being a public benefit corporation is the
-            architecture — shaping how we are governed, who we serve, how
-            we are funded, how we treat our people, and how our profits
-            are shared. Purpose is the framework the business is built on,
-            present in every choice we make.
+            For Mokshly, being a public benefit corporation shapes how we are
+            governed, who we serve, how we grow and how our success is shared.
           </p>
           <p className="hook-coda">
-            Our commitments published each year. Measured against outcomes.
-            Held as we grow.
+            Purpose isn't beside the business. It's built into it.
           </p>
           <p style={{ marginTop: 28 }}>
             <Link to="/about#different" className="link-arrow">See how Mokshly is structured →</Link>
@@ -255,8 +236,7 @@ export default function Home() {
         <div className="pullquote">
           <blockquote>
             “The organizations that strengthen their people will be the ones
-            capable of navigating what's coming. Because sustainable humans
-            build sustainable institutions.”
+            capable of navigating what's coming.”
           </blockquote>
           <p className="attribution">From the Mokshly Manifesto</p>
           <Link to="/manifesto" className="btn btn--ghost">
@@ -269,9 +249,11 @@ export default function Home() {
       <section className="section">
         <div className="container--read center">
           <h2 className="display-lg mb-md">Begin the conversation.</h2>
-          <p className="lede mb-md" style={{ margin: '0 auto 36px' }}>
-            Lead your people through the changes AI is bringing. Build a
-            business that's ready for whatever comes next. Let's talk.
+          <p className="lede mb-md" style={{ margin: '0 auto 12px' }}>
+            AI will continue to change work.
+          </p>
+          <p className="lede mb-md" style={{ margin: '0 auto 36px', fontWeight: 600 }}>
+            The opportunity is to strengthen the people who will shape what comes next.
           </p>
           <Link to="/contact#enterprise" className="btn">Schedule a Leadership Conversation</Link>
         </div>

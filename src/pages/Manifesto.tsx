@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-/** Each stanza is a separate beat in the manifesto. Preserved verbatim
- *  from the build spec. Line breaks within a stanza render as <br>. */
+/** Each stanza is a separate beat in the manifesto. Line breaks within a
+ *  stanza (arrays) render as separate lines. */
 const STANZAS: (string | string[])[] = [
-  'We the humans are entering one of the most consequential transitions in history.',
   ['Artificial intelligence is not coming.', 'It is here.'],
   [
     'And it is reshaping how we live,',
@@ -13,166 +12,117 @@ const STANZAS: (string | string[])[] = [
     'how we relate to one another,',
     'and how we interact with machines.',
   ],
-  ['Jobs will change.', 'Titles will disappear.', 'Entire industries will reorganize.'],
+  ['Jobs will change.', 'Roles will be rewritten.', 'Entire industries will reorganize.'],
   ['But the deepest shift will not be economic.', 'It will be human.'],
+  'The meaning of work is evolving.',
+  'The meaning of contribution is changing.',
+  'Even our understanding of what it means to be capable, relevant, and valuable is being redefined.',
+  'And this transformation is moving faster than most of us can absorb.',
+  'At the very moment we are building increasingly capable machines, we must ask:',
+  'Are we strengthening the humans who will work alongside them and steward what comes next?',
+  'We are scaling intelligence faster than we are strengthening human capability.',
+  'That imbalance matters.',
   [
-    'The meaning of work is evolving.',
-    'The meaning of contribution is changing.',
-    'Even our understanding of identity — what it means to be capable, relevant, and valuable — is being redefined.',
+    'Because intelligence without judgment creates risk.',
+    'Acceleration without adaptability creates disruption.',
+    'Capability without awareness can take us somewhere we never intended to go.',
   ],
-  ['This transformation will not gently adjust humanity.', 'It will shake us.'],
-  'And the data already tells us something important.',
-  'We are not ready.',
-  ['Burnout is rising.', 'Attention is fragmented.', 'Anxiety is increasing.', 'Trust is declining.'],
+  ['The answer is not resistance to technology.', 'It is to strengthen what is fundamentally human.'],
+  'Awareness. Judgment. Adaptability. Collaboration. Resilience. Sustainable well-being.',
+  ['These capabilities have always mattered.', 'In the age of AI, they become foundational.'],
+  'And beneath them sits something even more fundamental:',
+  'Awareness — the space in which we can see clearly enough to choose intentionally rather than simply react.',
   [
-    'At the very moment we are building systems more powerful than ourselves,',
-    'we are not strengthening ourselves to steward that power.',
+    'No machine can cultivate our awareness for us.',
+    'No algorithm can make us more grounded, more resilient, or more intentional.',
   ],
-  'We are scaling intelligence faster than we are scaling awareness.',
-  'And that imbalance is dangerous.',
+  ['Technology can support us.', 'But strengthening these capabilities requires our participation.'],
+  'Humanity has navigated disruption before.',
+  ['We have adapted.', 'We have reorganized.', 'We have rebuilt.'],
+  'What is different now is the speed, scale, and continuity of change.',
+  'We are building systems that can learn, reason, decide, create, and act alongside us.',
+  'As technological capability rises, human capability must rise with it.',
   [
-    'Because intelligence without maturity creates instability.',
-    'Capability without depth creates fragmentation.',
-    'Acceleration without grounding creates fracture.',
+    'And human capability cannot be left to chance.',
+    'It must be strengthened deliberately, continuously, and at scale.',
   ],
-  'What we need now is not resistance to technology.',
+  [
+    'Not through another program that begins and ends.',
+    'Not through inspiration that fades.',
+    'But through understanding, practice, reflection, and measurement woven into how we live and work.',
+  ],
 ];
 
-const STANZAS_2: (string | string[])[] = [
+const STANZAS_AFTER: (string | string[])[] = [
   [
-    'Human sustainability is the capacity to remain whole while everything changes —',
-    'to build capability while staying grounded in purpose,',
-    'to grow in power without losing depth,',
-    'and to navigate transformation without forgetting who we are.',
+    'This is both an opportunity and a responsibility.',
+    'For individuals.',
+    'For institutions.',
+    'And especially for organizations whose decisions shape how millions of people experience this transformation.',
   ],
   [
-    'It is the ability to endure rapid change',
-    'without losing clarity, integrity, or connection to what matters most.',
-  ],
-  ['In a world that scales intelligence,', 'we must scale inner steadiness.'],
-  ['Human sustainability is not a luxury.', 'It is infrastructure.'],
-  [
-    'Because the coming years will determine whether we remain the stewards of this transformation —',
-    'or are carried by forces we no longer understand.',
-  ],
-  ['Humanity has endured disruption before.', 'We have adapted.', 'We have reorganized.', 'We have rebuilt.'],
-  'Resilience lives within us.',
-  ['But what is different now', 'is the speed and scale of change.'],
-  'We are no longer building tools that extend human effort.',
-  [
-    'We are building systems that can operate without us —',
-    'systems that learn, adapt, decide, and execute at scale.',
+    'Organizations are investing billions in technological infrastructure for the age of AI.',
+    'The human infrastructure deserves equal intention.',
   ],
   [
-    'Entire categories of work once considered uniquely human',
-    'can now be replicated, augmented, or replaced by intelligent systems.',
+    'Because you cannot navigate increasing complexity without judgment.',
+    'You cannot absorb continuous change without adaptability.',
+    'You cannot build enduring institutions without collaboration, resilience, and well-being.',
+    'And you cannot exercise any of these fully without awareness.',
   ],
-  'Which is precisely why human infrastructure must rise alongside technological infrastructure.',
+  'When foundational human capabilities strengthen, something larger becomes possible.',
   [
-    'If we are engineering increasingly intelligent systems,',
-    'we must also strengthen the humans who live and work within them.',
+    'People become better equipped to navigate change.',
+    'Teams make better decisions.',
+    'Organizations become more adaptable.',
+    'Technology and human capability begin to reinforce one another.',
   ],
-  'Human sustainability is not automatic.',
-  ['Like all infrastructure,', 'it must be designed, built, and maintained.'],
-  ['And to endure,', 'it must be built on fundamentals.'],
-  ['Not complexity.', 'Not trends.', 'Not symbolic gestures.'],
+  'Strong humans build strong institutions.',
+  'And strong institutions can help shape a future in which technological progress and human progress move together.',
   [
-    'Every human being needs structured support',
-    'to sustain the capacities that keep us steady and whole.',
-  ],
-  'A human sustainability system must strengthen our ability:',
-  [
-    'To cultivate awareness — the space from which clarity emerges.',
-    'To breathe with intention — steadying our internal rhythms.',
-    'To move with presence — restoring balance and vitality.',
-    'To speak consciously — shaping meaning and connection.',
-    'To live in alignment — with our deeper nature, through life\'s seasons.',
-  ],
-  'These are not productivity techniques.',
-  'They are the foundations of human stability.',
-  [
-    'No machine can cultivate our awareness.',
-    'No system can breathe with intention for us.',
-    'No algorithm can move our body.',
-    'No intelligence can choose our words or align us with our own nature.',
-  ],
-  'They require our participation.',
-  [
-    'And for a system to endure —',
-    'to remain steady as the world evolves —',
-    'it must be anchored in principles that outlast the moment.',
-  ],
-  'The system must be:',
-  [
-    'Grounded in timeless wisdom.',
-    'Essential to human functioning.',
-    'Accessible to every person.',
-    'Practiced in daily life.',
-    'Structurally embedded — not treated as an afterthought.',
-  ],
-  'Because human sustainability cannot be restored through inspiration or a weekend seminar.',
-  ['It is rebuilt through fundamentals.', 'And it must be delivered at scale.'],
-  [
-    'This is both an opportunity and a responsibility —',
-    'for individuals, and even more so for organizations.',
-  ],
-  ['Corporations today shape more than markets.', 'They shape the environments where millions work and live.'],
-  'They are building the systems driving this transformation.',
-  'And those systems depend on sustainable humans to steward them.',
-  [
-    'You cannot architect increasing complexity with people who are fragmenting.',
-    'You cannot scale intelligence with teams in chronic depletion.',
-    'You cannot entrust critical decisions to minds without clarity or steadiness.',
+    'This is the opportunity before us.',
+    'Not to compete with machines at what machines increasingly do well.',
+    'But to strengthen what is distinctly human.',
   ],
   [
-    'When human sustainability is built into the fabric of work as infrastructure, not added as programming,',
-    'performance strengthens.',
-    'Trust deepens.',
-    'Adaptability expands.',
-    'Innovation becomes more durable.',
-  ],
-  'This is the pairing this moment requires:',
-  ['Intelligence with awareness.', 'Capability with depth.', 'Acceleration with steadiness.'],
-  ['This is not compliance.', 'It is not another wellness initiative.'],
-  'It is a strategic advantage aligned with the greater good.',
-  [
-    'Institutions educating the next generation',
-    'and governments shaping the frameworks of society',
-    'also play a decisive role.',
+    'To become more aware as intelligence expands.',
+    'More adaptable as change accelerates.',
+    'More discerning as choices multiply.',
+    'More collaborative as boundaries shift.',
+    'More resilient through uncertainty.',
+    'More sustainable in how we live and work.',
   ],
   [
-    'Together with corporations,',
-    'they shape the conditions in which people learn, contribute, and evolve —',
-    'and how this era of intelligence unfolds.',
-  ],
-  ['Because intelligence without sustainable humans', 'cannot endure.'],
-  ['This is how we catch up with the speed of change.', 'And bring humans back to the center of this revolution.'],
-  ['Sustainable humans build sustainable institutions.', 'Sustainable institutions shape sustainable societies.'],
-  ['The AI revolution will continue —', 'rapidly, relentlessly, irreversibly.'],
-  [
-    'The question is whether we will strengthen the world within us',
-    'at the same pace.',
+    'The AI revolution will continue.',
+    'The question is what kind of humans — and what kind of institutions — will grow alongside it.',
   ],
   [
-    'The future is being shaped now —',
+    'The future is being shaped now:',
     'in code,',
     'in classrooms,',
     'in boardrooms,',
-    'and in the daily rhythms we choose to normalize.',
+    'and in the choices we make every day.',
   ],
-  ['What we build in this decade', 'will echo for centuries.'],
+  'What we build in this decade may echo for generations.',
   [
-    'And it will be shaped not only by the systems we design —',
-    'but by the steadiness of the humans within them.',
+    'And it will be shaped not only by the intelligence of the systems we create —',
+    'but by the awareness, judgment, and humanity of the people who create and steward them.',
   ],
-  ['In how we show up.', 'In what we practice.', 'In what we quietly normalize within our teams, families, and communities.'],
   'This is our moment.',
-  ['Not to fear what is coming —', 'but to strengthen what is enduring.'],
-  ['To become steadier as the world accelerates.', 'Clearer as complexity increases.', 'More aligned as power expands.'],
-  ['Let us rise —', 'not in dominance, but in depth.', 'Not in speed, but in steadiness.', 'Not in power alone, but in wisdom.'],
-  ['And let us seize this opportunity —', 'available to all of us, today.'],
+  ['Not to fear what is coming.', 'But to strengthen what is enduring.'],
+  [
+    'To become steadier as the world accelerates.',
+    'Clearer as complexity increases.',
+    'More intentional as capability expands.',
+  ],
+  [
+    'Let us rise —',
+    'not in dominance, but in depth.',
+    'Not in speed alone, but in wisdom.',
+    'Not by becoming more like the machines we build —',
+    'but by strengthening what is distinctly human.',
+  ],
   'The future will carry the imprint of the humans who shape it.',
-  'Let it carry ours.',
 ];
 
 function Stanza({ s }: { s: string | string[] }) {
@@ -224,16 +174,16 @@ export default function Manifesto() {
           </p>
         </div>
 
-        {STANZAS.slice(1).map((s, i) => <Stanza key={`a-${i}`} s={s} />)}
+        {STANZAS.map((s, i) => <Stanza key={`a-${i}`} s={s} />)}
 
         <div className="stanza">
           <p>
-            We need{' '}
-            <strong className="keyword">human sustainability</strong>.
+            Human capability must become{' '}
+            <strong className="keyword">infrastructure</strong>.
           </p>
         </div>
 
-        {STANZAS_2.slice(0, -1).map((s, i) => <Stanza key={`b-${i}`} s={s} />)}
+        {STANZAS_AFTER.map((s, i) => <Stanza key={`b-${i}`} s={s} />)}
 
         <div className="stanza">
           <p>
@@ -264,17 +214,12 @@ export default function Manifesto() {
           <p className="eyebrow">From Words to Work</p>
           <h2 className="display-lg mb-md">Let's begin the work.</h2>
           <p className="lede mb-md" style={{ margin: '0 auto 32px' }}>
-            If this resonates with what you are doing at your enterprise,
-            we welcome the conversation.
+            If this resonates with what your organization is navigating, we
+            welcome the conversation.
           </p>
           <Link to="/contact#enterprise" className="btn">
             Schedule a Leadership Conversation
           </Link>
-          <p className="mt-md">
-            <Link to="/our-offering" className="link-arrow">
-              Learn about Our Offering →
-            </Link>
-          </p>
         </div>
       </section>
     </>

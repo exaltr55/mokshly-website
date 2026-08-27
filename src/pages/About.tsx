@@ -9,7 +9,7 @@ const PRINCIPLES: Array<[string, string, string]> = [
   ],
   [
     'Awareness',
-    'Better decisions begin with greater awareness.',
+    'Better choices begin with greater awareness.',
     'We respond from awareness, not reaction.',
   ],
   [
@@ -20,7 +20,7 @@ const PRINCIPLES: Array<[string, string, string]> = [
   [
     'Balance',
     'Sustainable performance requires balance.',
-    'People should grow without trading away their health, relationships, or purpose.',
+    'Growth should not come at the expense of health, relationships or purpose.',
   ],
   [
     'Compassion',
@@ -34,23 +34,21 @@ export default function About() {
     <>
       <SEO
         title="About — Mokshly"
-        description="Mokshly is a Human Sustainability Company — built to operate as a Public Benefit Corporation, with structural commitments to the people, communities, and causes our work serves."
+        description="Mokshly is a Human Capability Infrastructure Company — a public benefit corporation building the infrastructure that strengthens the foundational human capabilities people need to thrive alongside AI."
       />
 
       {/* 1 — Hero */}
       <section className="section">
         <div className="container--read">
           <p className="eyebrow">About Mokshly</p>
-          <h1 className="display-xl mb-md">A Human Sustainability Company.</h1>
+          <h1 className="display-xl mb-md">A Human Capability Infrastructure Company.</h1>
           <p className="lede mb-md">
-            We build the infrastructure that strengthens people for the age of
-            accelerating intelligence — through an integrated system embedded
-            across the workforce, designed to endure.
+            We build infrastructure that strengthens the foundational human
+            capabilities people need to thrive alongside AI.
           </p>
           <p className="lede">
-            We exist because the age of AI demands not just smarter machines,
-            but stronger humans. Building that strength — by design, at scale,
-            sustained over time — is the work we do.
+            Because as machines become more capable, strengthening people
+            becomes more important.
           </p>
         </div>
       </section>
@@ -82,8 +80,7 @@ export default function About() {
           <div className="section-head">
             <h2 className="display-lg">Our Guiding Principles</h2>
             <p className="lede mt-md">
-              These principles guide how we build Mokshly, how we serve
-              organizations, and how we show up in the world.
+              These principles guide how we build, serve and grow.
             </p>
           </div>
 
@@ -107,77 +104,68 @@ export default function About() {
             Where purpose becomes structure.
           </h2>
           <p className="lede mb-md">
-            Mokshly is a public benefit corporation. The five commitments
-            below are how that translates into structure — how we are
-            governed, how we are funded, how we compensate, how we stay
-            independent, and how we give back.
+            Mokshly is a public benefit corporation. Our purpose shapes how we
+            are governed, funded and compensated, how we maintain our
+            independence, and how we give back.
           </p>
           <p className="lede mb-md">
-            Each is a deliberate choice, written into how the company is
-            built — and held against outcomes each year, in public.
+            These are choices built into the company — and commitments we hold
+            ourselves accountable to.
           </p>
 
           <div className="commitments mt-xl">
             <div className="commitment">
               <h3>We are governed for our purpose.</h3>
               <p>
-                Mokshly's leadership is accountable not just to the bottom
-                line, but to the people we serve, the communities our work
-                touches, and the commitments we have made.
-              </p>
-              <p className="kicker">
-                Submitted to annual review — verifiable, not merely asserted.
+                Our leadership is accountable not only to business performance,
+                but to our purpose and the people our work serves.
               </p>
             </div>
 
             <div className="commitment">
               <h3>We are accountable to those we serve.</h3>
               <p>
-                We accept capital only from sources aligned with our
-                purpose — revenue from the enterprises we serve, and grants
-                from institutions that share our commitment.
+                We seek capital aligned with our purpose — primarily through the
+                enterprises we serve and institutions that share our commitment.
               </p>
               <p className="kicker">
-                Capital shapes the company it builds — ours is shaped to
-                strengthen our accountability to those we serve.
+                Capital shapes the company it builds.
               </p>
             </div>
 
             <div className="commitment">
               <h3>We believe in fair compensation.</h3>
               <p>
-                People are rewarded with dignity, in proportion to contribution
-                and impact — never to extraction.
+                People should be rewarded with dignity and in proportion to
+                contribution and impact.
               </p>
               <p className="kicker">
-                The discipline we bring to our customers, we hold ourselves to.
+                The principles we bring to our customers, we apply to ourselves.
               </p>
             </div>
 
             <div className="commitment">
               <h3>We remain independent.</h3>
               <p>
-                Mokshly is independent of parties, ideologies, and external
-                interests — so that we remain trusted by everyone committed
-                to strengthening humans.
+                Mokshly is independent of political parties, ideologies and
+                external interests.
               </p>
               <p className="kicker">
-                We answer to our purpose, our customers, and the commitments
-                we have made.
+                We answer to our purpose, our customers and the commitments we
+                have made.
               </p>
             </div>
 
             <div className="commitment">
               <h3>We give back to society.</h3>
               <p>
-                A defined share of Mokshly's profit — set in our corporate
-                structure — flows back to the foundations of human life that
-                make all other work possible:
+                A defined share of Mokshly's profits flows back to foundations
+                of human life:
               </p>
               <ul className="commitment__list">
                 <li><em>Food</em> for those who go without</li>
-                <li><em>Education</em> for communities the system has overlooked</li>
-                <li><em>Care</em> for the elders who built what we now inherit</li>
+                <li><em>Education</em> for communities opportunity has overlooked</li>
+                <li><em>Care</em> for the elders who built what we inherit</li>
               </ul>
               <p className="kicker">
                 Not philanthropy at the end. Structure from the start.
@@ -208,21 +196,10 @@ export default function About() {
                 color: 'var(--ink-soft)',
                 fontSize: 16.5,
                 lineHeight: 1.65,
-                marginBottom: 12,
               }}
             >
-              Mokshly is committed to publishing an annual public benefit
-              report — measuring how we perform against the commitments above.
-            </p>
-            <p
-              style={{
-                color: 'var(--ink-soft)',
-                fontSize: 16.5,
-                lineHeight: 1.65,
-              }}
-            >
-              The commitments are structural. The reporting is how we keep
-              them honest.
+              We are committed to publishing an annual public benefit report
+              measuring our progress against these commitments.
             </p>
           </div>
         </div>
@@ -234,19 +211,21 @@ export default function About() {
           <p className="eyebrow">A Note from Our Founder</p>
           <p>
             Strong humans are not a side effect of progress. They are its
-            foundation. That strength is not built by chance — it is built
-            by design, through structured understanding and practice,
-            sustained over time.
+            foundation.
           </p>
           <p>
-            Mokshly is our part of the work — to keep humanity primary in
+            That strength is not built by chance. It is built intentionally,
+            through understanding and practice sustained over time.
+          </p>
+          <p>
+            Mokshly is our part of that work — to keep humanity primary in
             everything that comes next.
           </p>
           <div className="sig">
             <p>Founder, Mokshly</p>
           </div>
           <p style={{ marginBottom: 8 }}>
-            The fuller statement of this work is set out in the Mokshly
+            The fuller expression of this work is set out in the Mokshly
             Manifesto.
           </p>
           <Link to="/manifesto" className="link-arrow">
@@ -260,16 +239,10 @@ export default function About() {
         <div className="container--read center">
           <h2 className="display-lg mb-md">Continue the conversation</h2>
           <p className="lede mb-md" style={{ margin: '0 auto 36px' }}>
-            If what Mokshly is — as a company, as a system, as a commitment —
-            resonates with what your organization is building, we'd welcome the
-            opportunity to talk.
+            If what we are building resonates with where your organization is
+            headed, we'd welcome the conversation.
           </p>
-          <Link to="/contact#enterprise" className="btn">Schedule a Leadership Conversation</Link>
-          <p className="mt-md">
-            <Link to="/our-offering" className="link-arrow">
-              Or learn more about our offering →
-            </Link>
-          </p>
+          <Link to="/contact#enterprise" className="btn">Start a conversation</Link>
         </div>
       </section>
     </>

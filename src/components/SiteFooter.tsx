@@ -8,7 +8,7 @@ export default function SiteFooter() {
           <div>
             <p className="brand" style={{ marginBottom: 4 }}>Mokshly</p>
             <p className="subtle" style={{ fontSize: 13, margin: 0 }}>
-              A Human Sustainability Company.
+              A Human Capability Infrastructure Company.
             </p>
           </div>
           <nav className="site-footer__links" aria-label="Footer">
