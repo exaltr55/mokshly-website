@@ -119,6 +119,15 @@ export default function OurOffering() {
           <p className="eyebrow">The Foundation</p>
           <h2 className="display-lg mb-md">Awareness becomes practice.</h2>
           <p className="lede mb-md">
+            Awareness is the foundation — but a foundation only holds when it is
+            returned to, in real moments, again and again. Capability is
+            strengthened not by understanding Awareness, but by practicing it.
+          </p>
+          <p className="lede mb-md">
+            Mokshly gives that a structure: a way to understand, and a way to
+            act on that understanding every day.
+          </p>
+          <p className="lede mb-md">
             The <strong>5S Framework</strong> provides a simple way to understand
             ourselves and the conditions shaping our choices.
           </p>
@@ -128,7 +137,7 @@ export default function OurOffering() {
           </p>
           <p className="lede">
             Together, they help people move from reaction toward greater
-            awareness and intentional choice.
+            Awareness and intentional choice.
           </p>
         </div>
       </section>
