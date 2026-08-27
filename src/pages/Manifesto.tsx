@@ -28,7 +28,7 @@ const STANZAS: (string | string[])[] = [
     'Capability without awareness can take us somewhere we never intended to go.',
   ],
   ['The answer is not resistance to technology.', 'It is to strengthen what is fundamentally human.'],
-  'Awareness. Judgment. Adaptability. Collaboration. Resilience. Sustainable well-being.',
+  'Self-awareness. Judgment. Adaptability. Collaboration. Resilience. Sustainable well-being.',
   ['These capabilities have always mattered.', 'In the age of AI, they become foundational.'],
   'And beneath them sits something even more fundamental:',
   'Awareness — the space in which we can see clearly enough to choose intentionally rather than simply react.',
