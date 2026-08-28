@@ -193,15 +193,12 @@ export default function Home() {
           <h2 className="display-lg mb-md">
             Built for the enterprise. Designed for people.
           </h2>
-          <p className="lede mb-md">
+          <p className="lede">
             Mokshly integrates across functions, geographies and existing
             learning ecosystems — while protecting individual privacy and
             giving organizations a measurable view of human capability over
             time.
           </p>
-          <Link to="/our-offering" className="link-arrow">
-            See how Mokshly works →
-          </Link>
         </div>
       </section>
 
