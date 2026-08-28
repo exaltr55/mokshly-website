@@ -87,7 +87,7 @@ export default function OurOffering() {
         <div className="container--read">
           <p className="eyebrow">YouSourceful</p>
           <h2 className="display-lg mb-md">
-            The platform for Human Capability Infrastructure.
+            The platform that delivers it.
           </h2>
           <p className="lede mb-md">
             YouSourceful turns human capability development from an occasional
