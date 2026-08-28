@@ -156,9 +156,8 @@ export default function Home() {
             Roles are changing. Expectations are shifting. Uncertainty is growing.
           </p>
           <p className="lede mb-md">
-            The foundational human capabilities that help people navigate change —
-            self-awareness, judgment, adaptability, collaboration, resilience and
-            sustainable well-being — are becoming more consequential.
+            The foundational human capabilities that help people navigate change
+            are becoming more consequential.
           </p>
           <Link to="/manifesto" className="link-arrow">
             Read our perspective on this moment →
