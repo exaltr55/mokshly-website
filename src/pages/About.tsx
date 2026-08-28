@@ -209,20 +209,19 @@ export default function About() {
       <section className="section">
         <div className="founder-note">
           <p className="eyebrow">A Note from Our Founder</p>
-          <p>
-            Strong humans are not a side effect of progress. They are its
-            foundation.
-          </p>
-          <p>
-            That strength is not built by chance. It is built intentionally,
-            through understanding and practice sustained over time.
-          </p>
-          <p>
-            Mokshly is our part of that work — to keep humanity primary in
-            everything that comes next.
-          </p>
-          <div className="sig">
-            <p>Founder, Mokshly</p>
+          <div className="founder-note__body">
+            <p>
+              Strong humans are not a side effect of progress. They are its
+              foundation.
+            </p>
+            <p>
+              That strength is not built by chance. It is built intentionally,
+              through understanding and practice sustained over time.
+            </p>
+            <p>
+              Mokshly is our part of that work — to keep humanity primary in
+              everything that comes next.
+            </p>
           </div>
           <p style={{ marginBottom: 8 }}>
             The fuller expression of this work is set out in the Mokshly

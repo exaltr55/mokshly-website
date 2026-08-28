@@ -1094,6 +1094,12 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   margin: 0 auto;
 }
 .founder-note p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 16px; }
+.founder-note__body p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--ink);
+}
 .founder-note .sig {
   font-family: var(--font-serif);
   font-style: italic;
