@@ -129,15 +129,10 @@ export default function Home() {
             Strong humans build strong institutions.
           </h1>
           <p className="lede">
-            <span style={{ whiteSpace: 'nowrap' }}>
-              AI is rewriting humanity's relationship with work.
-            </span>
-            <br />
-            Mokshly is a public benefit corporation dedicated
-            <br />
-            to strengthening the foundational human capabilities
-            <br />
-            needed to thrive through this transformation.
+            AI is rewriting humanity's relationship with work. Mokshly is a
+            public benefit corporation dedicated to strengthening the
+            foundational human capabilities needed to thrive through this
+            transformation.
           </p>
         </div>
       </section>
