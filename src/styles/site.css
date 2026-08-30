@@ -588,7 +588,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 }
 
 .voices-section__head {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .voices-section__eyebrow {
   font-family: var(--font-sans);
@@ -690,7 +690,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 @media (max-width: 720px) {
   .voices-section { padding: 32px 16px; }
   .voices-section__card { padding: 48px 24px 56px; border-radius: 10px; }
-  .voices-section__head { margin-bottom: 40px; }
+  .voices-section__head { margin-bottom: 28px; }
   .voices-section__stage { min-height: 260px; }
   .voices-section__quote-block { max-width: 100%; }
 }
