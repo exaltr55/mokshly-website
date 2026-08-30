@@ -298,6 +298,18 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   border-bottom-color: var(--accent);
 }
 
+/* Mobile menu toggle — hidden on desktop, shown ≤600px. */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 6px;
+}
+
 @media (max-width: 720px) {
   .site-header__inner { padding: 9px 18px; }
   .nav { gap: 14px; }
@@ -305,8 +317,36 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   .brand { font-size: 22px; }
 }
 
-@media (max-width: 480px) {
-  .nav a:not(.nav__cta) { display: none; }
+/* ≤600px: collapse the primary nav into a hamburger dropdown. */
+@media (max-width: 600px) {
+  .nav-toggle { display: inline-flex; align-items: center; }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px 18px 14px;
+    background: color-mix(in srgb, var(--bg) 98%, transparent);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+  }
+  .nav--open { display: flex; }
+  .nav a {
+    font-size: 15px;
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav a.nav__signin {
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid var(--accent);
+  }
 }
 
 .nav__cta {
@@ -1089,9 +1129,12 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 
 /* ── Founder note ──────────────────────────────────────────── */
 
+/* Align the founder note with the other read-width sections (same column and
+ * gutters) instead of a narrower, off-centre box. */
 .founder-note {
-  max-width: 640px;
+  max-width: var(--maxw-read);
   margin: 0 auto;
+  padding: 0 24px;
 }
 .founder-note p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 16px; }
 .founder-note__body p {
