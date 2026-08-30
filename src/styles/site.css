@@ -588,7 +588,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 }
 
 .voices-section__head {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 .voices-section__eyebrow {
   font-family: var(--font-sans);
@@ -616,7 +616,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   position: relative;
   min-height: 140px;
   display: flex;
-  align-items: flex-start;   /* quote sits just under the title, not centred */
+  align-items: center;
   justify-content: center;
 }
 
@@ -668,7 +668,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 48px;
+  margin-top: 20px;
 }
 .voices-section__dot {
   width: 6px;
