@@ -194,7 +194,7 @@ export default function YouSourceful() {
       {/* 4 — Your Companion (reflect on your own) */}
       <section className="section section--raised">
         <div className="container--read">
-          <p className="eyebrow">Reflect on your own</p>
+          <p className="eyebrow">Think things through</p>
           <h2 className="display-lg mb-md">Your Companion — a private conversation.</h2>
           <p className="lede">
             Bring whatever's on your mind — a decision you're weighing, a conversation that went
@@ -207,7 +207,7 @@ export default function YouSourceful() {
       {/* 5 — Your Foursome (practice with others) */}
       <section className="section">
         <div className="container--read">
-          <p className="eyebrow">Reflect together</p>
+          <p className="eyebrow">A small circle</p>
           <h2 className="display-lg mb-md">Your Foursome — four people, sharing the journey.</h2>
           <p className="lede">
             A Foursome is a small group of four who meet regularly to reflect on their practice
