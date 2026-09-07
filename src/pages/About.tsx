@@ -34,12 +34,12 @@ export default function About() {
     <>
       <SEO
         title="About — Mokshly"
-        description="Mokshly is a Human Capability Infrastructure Company — a public benefit corporation building the infrastructure that strengthens the foundational human capabilities people need to thrive alongside AI."
+        description="Mokshly is a Human Capability Infrastructure Company — a public benefit corporation building infrastructure to strengthen foundational human capabilities."
       />
 
       {/* 1 — Hero */}
-      <section className="section">
-        <div className="container--read">
+      <section className="hero">
+        <div className="hero__inner">
           <p className="eyebrow">About Mokshly</p>
           <h1 className="display-xl mb-md">A Human Capability Infrastructure Company.</h1>
           <p className="lede mb-md">
@@ -211,22 +211,20 @@ export default function About() {
           <p className="eyebrow">A Note from Our Founder</p>
           <div className="founder-note__body">
             <p>
-              Strong humans are not a side effect of progress. They are its
-              foundation.
+              <strong>
+                Strong humans are not a side effect of progress. They are its
+                foundation.
+              </strong>
             </p>
             <p>
-              That strength is not built by chance. It is built intentionally,
-              through understanding and practice sustained over time.
+              That strength is built intentionally, through understanding and
+              practice sustained over time.
             </p>
             <p>
               Mokshly is our part of that work — to keep humanity primary in
               everything that comes next.
             </p>
           </div>
-          <p style={{ marginBottom: 8 }}>
-            The fuller expression of this work is set out in the Mokshly
-            Manifesto.
-          </p>
           <Link to="/manifesto" className="link-arrow">
             Read the Mokshly Manifesto →
           </Link>
@@ -236,12 +234,12 @@ export default function About() {
       {/* 6 — Closing */}
       <section className="section section--airy section--raised">
         <div className="container--read center">
-          <h2 className="display-lg mb-md">Continue the conversation</h2>
+          <h2 className="display-lg mb-md">Continue the conversation.</h2>
           <p className="lede mb-md" style={{ margin: '0 auto 36px' }}>
             If what we are building resonates with where your organization is
             headed, we'd welcome the conversation.
           </p>
-          <Link to="/contact#enterprise" className="btn">Start a conversation</Link>
+          <Link to="/contact#enterprise" className="btn">Start a conversation →</Link>
         </div>
       </section>
     </>

@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Local content references — not part of the deployed site
 *.docx
+
+# Build info
+tsconfig.tsbuildinfo

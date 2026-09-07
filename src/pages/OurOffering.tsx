@@ -10,17 +10,17 @@ const PLATFORM = [
   [
     '01 — Baseline',
     'Understand where people and the organization are today.',
-    'Assessment establishes a baseline and identifies opportunities for development — for individuals and across the enterprise.',
+    'Assessment establishes a starting point and identifies opportunities for development.',
   ],
   [
-    '02 — Practice',
-    'Capability is built through practice, not content alone.',
-    'Seven foundational practices help people bring greater Awareness and intentionality into everyday life — at work and beyond it.',
+    '02 — Strengthen',
+    'Turn understanding into everyday development.',
+    'The 5S Framework helps people understand themselves and the conditions shaping their choices. The Seven Practices bring that understanding into everyday life.',
   ],
   [
     '03 — Measure',
-    'See whether practice is becoming consistent and capability is strengthening over time.',
-    'A private view for the individual; an aggregate view for the organization — without exposing individual data.',
+    'See how capability is strengthening over time.',
+    'Individuals see their own progress. Organizations see aggregate progress — without exposing individual reflections.',
   ],
 ];
 
@@ -29,25 +29,27 @@ export default function OurOffering() {
     <>
       <SEO
         title="Our Offering — Mokshly"
-        description="Human Capability Infrastructure for the AI Era. Mokshly helps organizations baseline, strengthen and measure the foundational human capabilities people need to thrive alongside AI."
+        description="Human Capability Infrastructure for the AI Era. Mokshly helps organizations baseline, strengthen and measure foundational human capabilities."
       />
 
       {/* 1 — The premise */}
-      <section className="section">
-        <div className="container--read">
+      <section className="hero">
+        <div className="hero__inner">
           <p className="eyebrow">Our Offering</p>
           <h1 className="display-xl mb-md">Human Capability Infrastructure</h1>
           <p className="lede mb-md">
             The future of enterprise will be shaped by the humans who steward it.
           </p>
           <p className="lede mb-md">
-            Mokshly helps organizations systematically baseline, strengthen and
-            measure the foundational human capabilities people need to thrive
-            alongside AI.
+            Mokshly helps organizations systematically{' '}
+            <strong>baseline, strengthen and measure</strong> the foundational
+            human capabilities people need to navigate continuous change.
           </p>
           <p className="lede">
-            Built for the enterprise. Designed around the individual. Made for
-            continuous change.
+            <strong>
+              Built for the enterprise. Designed around the individual. Made for
+              continuous change.
+            </strong>
           </p>
         </div>
       </section>
@@ -90,15 +92,14 @@ export default function OurOffering() {
             The platform that delivers it.
           </h2>
           <p className="lede mb-md">
-            YouSourceful turns human capability development from an occasional
-            intervention into continuous infrastructure — organized around a
-            simple loop that runs at scale:
+            YouSourceful brings Human Capability Infrastructure to people and
+            organizations through a continuous cycle:
           </p>
           <p
             className="serif"
             style={{ fontSize: 'clamp(20px, 2vw, 24px)', color: 'var(--accent)', fontWeight: 500, marginBottom: 8 }}
           >
-            Baseline. Practice. Measure.
+            <strong>Baseline. Strengthen. Measure.</strong>
           </p>
 
           <div className="grid grid--3 mt-lg">
@@ -147,22 +148,21 @@ export default function OurOffering() {
         <div className="container--read">
           <p className="eyebrow">Enterprise Infrastructure</p>
           <h2 className="display-lg mb-md">
-            Built to become part of how the organization develops people.
+            Built for the enterprise. Private for the individual.
           </h2>
           <p className="lede mb-md">
             Mokshly integrates with existing learning and development ecosystems
             rather than replacing them.
           </p>
           <p className="lede mb-md">
-            The platform provides a foundational capability layer while existing
-            systems continue to develop role-specific, technical, leadership and
-            other capabilities.
+            Individual journeys remain private. Organizations gain an aggregate
+            view of human capability over time.
           </p>
           <p
             className="serif"
             style={{ fontSize: 'clamp(18px, 1.8vw, 22px)', color: 'var(--accent)', fontWeight: 500 }}
           >
-            Enterprise-ready · Privacy-first · Scalable · Measurable
+            <strong>Enterprise-ready · Privacy-first · Scalable · Measurable</strong>
           </p>
         </div>
       </section>
@@ -181,11 +181,11 @@ export default function OurOffering() {
           <div className="grid grid--2 mt-lg">
             <div className="card card--compact">
               <h3>Consistency Index</h3>
-              <p>A private, individual measure of practice consistency.</p>
+              <p>A private, individual view of practice consistency.</p>
             </div>
             <div className="card card--compact">
               <h3>HCIx — Human Capability Infrastructure Index</h3>
-              <p>An aggregate organizational measure of foundational human capability.</p>
+              <p>An aggregate organizational view of foundational human capability.</p>
             </div>
           </div>
 
@@ -196,28 +196,25 @@ export default function OurOffering() {
       </section>
 
       {/* 7 — Outcomes */}
-      <section className="section section--airy section--raised">
+      <section className="section section--airy">
         <div className="container--read center">
           <p className="eyebrow">Outcomes</p>
           <h2 className="display-lg mb-md">Stronger people. More adaptable institutions.</h2>
-          <p className="lede mb-md" style={{ margin: '0 auto 20px' }}>
-            Enterprises are making two investments for the age of AI — the
-            technology, and training people to use it. The return on both
-            depends on a third: the foundational human capabilities that put
-            them to work.
-          </p>
-          <p className="lede mb-md" style={{ margin: '0 auto 28px' }}>
-            That is the investment Mokshly makes possible.
+          <p className="lede mb-md" style={{ margin: '0 auto 36px' }}>
+            Technology will keep changing. Organizations equipped to navigate it
+            need people who can change with it.
           </p>
           <p
             className="serif"
             style={{ fontSize: 'clamp(20px, 2vw, 24px)', color: 'var(--ink)', lineHeight: 1.5, marginBottom: 36 }}
           >
-            Greater adaptability. Better judgment. Stronger collaboration.
-            More resilient people. Sustainable performance.
+            <strong>
+              Greater adaptability. Better judgment. Stronger collaboration.
+              More resilient people. Sustainable performance.
+            </strong>
           </p>
           <Link to="/contact#enterprise" className="btn">
-            Bring Human Capability Infrastructure to your organization
+            Bring Human Capability Infrastructure to your organization →
           </Link>
         </div>
       </section>

@@ -41,6 +41,8 @@ jobs:
 
       - name: Build (Vite)
         run: npm run build
+        env:
+          VITE_APP_URL: https://app.mokshly.com
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

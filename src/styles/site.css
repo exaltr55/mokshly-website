@@ -83,13 +83,15 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 24px;
+  /* Generous, responsive side gutters — matches the roomy Anthropic feel
+     on wide screens while staying comfortable on phones. */
+  padding: 0 clamp(20px, 4vw, 40px);
 }
 
 .container--read {
   max-width: var(--maxw-read);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(20px, 4vw, 40px);
 }
 
 .section {
@@ -110,44 +112,12 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .section--raised + .section--raised {
   border-top: 1px solid var(--rule);
 }
-.section--ink + .section--ink {
-  border-top: 1px solid color-mix(in srgb, #FBF8F1 18%, transparent);
-}
 /* Hero is parchment — only divide if the next section is also parchment. */
 .hero + .section:not(.section--raised):not(.section--ink) {
   border-top: 1px solid var(--rule);
 }
 
 .section--raised { background: var(--bg-raised); }
-
-/* Inverted dark section — literal background color (NOT var(--accent),
- * because we also re-scope --accent below for descendants and CSS
- * custom properties resolve at use-time on the same element). All
- * semantic tokens re-scoped at the overlay root so descendants that
- * use them inherit readable cream-on-teal contrast. */
-.section--ink {
-  background: #0F2E2A;        /* literal deep teal */
-  color: #F4EFE3;
-  --ink: #FBF8F1;
-  --ink-soft: #F4EFE3;
-  --muted: #C8C2B0;
-  --subtle: #A8A294;
-  --border: #2A4A45;
-  --rule: #2A4A45;
-  --bg-raised: #1A3D38;
-  --bg-card: #1A3D38;
-  --accent: #FBF8F1;          /* invert accent so eyebrows/links read */
-  --accent-soft: #E8E2D2;
-}
-.section--ink,
-.section--ink p,
-.section--ink blockquote,
-.section--ink .lede,
-.section--ink .muted,
-.section--ink .subtle { color: #F4EFE3; }
-.section--ink h1, .section--ink h2, .section--ink h3, .section--ink h4 { color: #FBF8F1; }
-.section--ink a { color: #FBF8F1; }
-.section--ink .attribution { color: #C8C2B0; }
 
 @media (max-width: 720px) {
   .section { padding: 64px 0; }
@@ -159,8 +129,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 
 .display-xl { font-size: clamp(40px, 6vw, 68px); line-height: 1.08; letter-spacing: -0.015em; }
 .display-lg { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.12; letter-spacing: -0.01em; }
-.display-md { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.18; }
-.display-sm { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.25; }
 
 .eyebrow {
   font-family: var(--font-sans);
@@ -196,16 +164,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .manifesto .closing,
 .signature,
 .commitment h3,
-.commitments-coda,
-.name-row__id,
-.name-row__name,
-.name-list__num,
-.name-list__name,
-.brand,
-.card-number,
-.card .frame-line,
-.pullquote blockquote,
-.trio-item .name {
+.brand {
   font-variation-settings: "SOFT" 0, "WONK" 0;
   font-optical-sizing: auto;
 }
@@ -251,6 +210,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .link-arrow:hover { border-bottom-color: var(--accent); }
 
 /* ── Header ────────────────────────────────────────────────── */
+
+.brand-logo,
+.brand-mark { display: block; width: auto; }
 
 .site-header {
   position: sticky;
@@ -341,48 +303,143 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
     padding: 12px 2px;
     border-bottom: 1px solid var(--border);
   }
-  .nav a.nav__signin {
-    margin: 12px 0 0;
-    padding: 10px 12px;
-    text-align: center;
-    border: 1px solid var(--accent);
+}
+
+/* YouSourceful dropdown (Anthropic-style): a filled trigger that opens a
+   small menu with the sign-up action, Learn, and Sign in. */
+.nav__menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.nav .nav__try {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FBF8F1;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 120ms ease;
+}
+.nav .nav__try:hover {
+  background: var(--accent-bright);
+  border-color: var(--accent-bright);
+}
+.nav .nav__try:active { transform: translateY(1px); }
+.nav__try-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px 7px 16px;
+}
+.nav__try-chev {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-left: 1px solid rgba(251, 248, 241, 0.35);
+}
+.nav__try-chev svg { transition: transform 160ms ease; }
+.nav .nav__try[aria-expanded='true'] .nav__try-chev svg { transform: rotate(180deg); }
+
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 210px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(19, 19, 19, 0.12);
+  padding: 6px;
+  z-index: 60;
+  display: none;
+}
+.nav__dropdown--open { display: block; }
+.nav a.nav__dropdown-item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav a.nav__dropdown-item:hover {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .nav__menu { display: block; margin: 0; }
+  .nav .nav__try { display: none; } /* hide trigger; show items inline in the drawer */
+  .nav__dropdown {
+    position: static;
+    display: block;
+    min-width: 0;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .nav a.nav__dropdown-item {
+    padding: 12px 2px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
   }
 }
 
-.nav__cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 0;
-  color: var(--ink-soft);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  border-bottom: 1px solid transparent;
-}
-.nav__cta:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  background: transparent;
+/* Balanced call-to-action block: button with its offer note grouped beneath. */
+.cta-block { margin-top: 30px; }
+.cta-note {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
 }
 
-/* Sign-in link routes to the /signin greeting page (YouSourceful isn't open
- * yet). Styled as a small pill to distinguish it from the marketing nav links. */
-.nav a.nav__signin {
-  margin-left: 4px;
-  padding: 5px 12px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--accent);
+/* Product spotlight card — the YouSourceful platform, on the home page.
+   A distinct deep-teal card that routes to the YouSourceful landing page. */
+.yc-spotlight {
+  background: #0F2E2A;
+  color: #F4EFE3;
+  border-radius: 22px;
+  padding: clamp(32px, 6vw, 72px);
+  display: grid;
+  gap: 14px;
+}
+.yc-spotlight .eyebrow { color: #93B2AC; }
+.yc-spotlight h2 { color: #FBF8F1; margin: 0; max-width: 18ch; }
+.yc-spotlight .lede { color: #E6E0D2; max-width: 52ch; margin: 4px 0 0; }
+.yc-spotlight__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+.yc-spotlight .btn {
+  background: #FBF8F1;
+  border-color: #FBF8F1;
+  color: #0F2E2A;
+}
+.yc-spotlight .btn:hover { background: #ECE6D8; border-color: #ECE6D8; }
+.yc-spotlight .btn--ghost {
   background: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
+  color: #FBF8F1;
+  border-color: rgba(251, 248, 241, 0.45);
 }
-.nav a.nav__signin:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  border-bottom-color: var(--accent);
+.yc-spotlight .btn--ghost:hover {
+  background: rgba(251, 248, 241, 0.10);
+  border-color: #FBF8F1;
 }
+/* The arrow link reads on the dark card (teal-on-teal would vanish). */
+.yc-spotlight .link-arrow {
+  color: #FBF8F1;
+  border-bottom-color: rgba(251, 248, 241, 0.4);
+}
+.yc-spotlight .link-arrow:hover { border-bottom-color: #FBF8F1; }
 
 /* ── Footer ────────────────────────────────────────────────── */
 
@@ -527,212 +584,12 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   color: var(--ink-soft);
 }
 
-.card--quiet {
-  background: transparent;
-  border: 0;
-  border-top: 1px solid var(--rule);
-  padding: 24px 0 0;
-  border-radius: 0;
-}
-
-.card-number {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 8px;
-}
-
 .card h3 {
   font-size: 22px;
   margin-bottom: 6px;
 }
 
-.card .frame-line {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--accent-soft);
-  margin-bottom: 12px;
-  font-size: 17px;
-}
-
 .card p { color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
-
-/* ── Voices Section — distinct card with layered "deck" quotes ─
- * Card sits in a soft ocean-tinted block on the parchment page, so
- * the section reads as visually separate from Section 1 (hero) and
- * Section 3 (challenge). Quotes layer like a deck — each new one
- * rises from behind onto the front while the previous one recedes
- * back, briefly visible underneath. */
-.voices-section {
-  padding: 44px 0;
-  background: transparent;
-}
-
-/* The section that follows voices (the Challenge) — reduce its
- * top padding so the rhythm into Section 3 is tighter. */
-.voices-section + .section {
-  padding-top: 72px;
-}
-
-.voices-section__card {
-  max-width: 1240px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, #EDF3F8 0%, #E0EBF3 100%);
-  border: 1px solid rgba(74, 130, 172, 0.18);
-  border-radius: 14px;
-  padding: 80px 80px 88px;
-  text-align: center;
-  box-shadow: 0 12px 40px rgba(14, 58, 95, 0.06);
-}
-
-.voices-section__head {
-  margin-bottom: 20px;
-}
-.voices-section__eyebrow {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #2A5F8B;
-  margin: 0 0 16px;
-}
-.voices-section__title {
-  font-family: var(--font-serif);
-  font-size: clamp(24px, 2.8vw, 34px);
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: #102C46;
-  margin: 0 auto;
-  max-width: 22ch;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-  font-optical-sizing: auto;
-}
-
-.voices-section__stage {
-  position: relative;
-  min-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.voices-section__quote-block {
-  /* Single quote in the stage. Content swaps in/out while invisible,
-   * so transitions are sequential (no layering, no z-stacking). */
-  max-width: 780px;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(8px);
-  transition:
-    opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.voices-section__quote-block--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.voices-section__quote {
-  margin: 0 0 24px;
-}
-.voices-section__quote p {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.4;
-  color: #102C46;
-  margin: 0;
-  letter-spacing: -0.005em;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-  font-optical-sizing: auto;
-}
-
-.voices-section__attribution {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  color: #4F708C;
-  margin: 0;
-}
-
-/* Progress dots — show how many quotes total, which one is active.
- * Active dot grows wider into a small bar so the eye reads movement
- * across the strip as quotes cycle. */
-.voices-section__progress {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-.voices-section__dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(74, 130, 172, 0.28);
-  transition: background 400ms ease, width 400ms ease;
-}
-.voices-section__dot--active {
-  width: 22px;
-  background: #2A5F8B;
-}
-
-@media (max-width: 1080px) {
-  .voices-section { padding: 40px 24px; }
-  .voices-section__card { padding: 56px 40px 64px; }
-}
-
-@media (max-width: 720px) {
-  .voices-section { padding: 32px 16px; }
-  .voices-section__card { padding: 48px 24px 56px; border-radius: 10px; }
-  .voices-section__head { margin-bottom: 18px; }
-  .voices-section__stage { min-height: 260px; }
-  .voices-section__quote-block { max-width: 100%; }
-}
-
-/* ── Outcomes (stacked, equal weight) ─────────────────────── */
-
-.outcomes {
-  display: grid;
-  gap: 36px;
-}
-.outcome h3 {
-  font-family: var(--font-sans);
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  margin-bottom: 6px;
-}
-.outcome p { color: var(--ink-soft); font-size: 16px; line-height: 1.55; }
-
-/* ── Pull quote ───────────────────────────────────────────── */
-
-.pullquote {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-.pullquote blockquote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.6;
-  color: var(--ink-soft);
-  margin: 0 0 24px;
-}
-.pullquote .attribution {
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  margin-bottom: 28px;
-}
 
 /* ── Section heads ─────────────────────────────────────────── */
 
@@ -849,18 +706,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .commitment__list em {
   font-style: italic;
   color: var(--ink);
-}
-
-.commitments-coda {
-  margin-top: 56px;
-  padding-top: 32px;
-  border-top: 1px solid var(--rule);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(19px, 2vw, 22px);
-  line-height: 1.5;
-  color: var(--ink);
-  max-width: 56ch;
 }
 
 /* Lighter coda for homepage curiosity hooks — italic editorial line
@@ -992,141 +837,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .legal .in-short p { margin: 0 0 10px; color: var(--ink); }
 .legal .in-short p:last-child { margin-bottom: 0; }
 
-/* ── Name row / list (Offering teasers) ────────────────────
- * Used on Our Offering to NAME the 5S elements and 7 Practices without
- * revealing their substance — that lives behind the registered-user
- * wall in YouSourceful and in conversation with the Mokshly team. */
-
-.name-row {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-@media (max-width: 720px) {
-  .name-row { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 420px) {
-  .name-row { grid-template-columns: 1fr; }
-}
-.name-row__item {
-  padding: 12px 14px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  display: grid;
-  gap: 2px;
-  text-align: left;
-}
-.name-row__id {
-  font-family: var(--font-serif);
-  font-size: 14px;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-}
-.name-row__name {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  color: var(--ink);
-  line-height: 1.2;
-}
-
-.name-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--rule);
-}
-.name-list__item {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  padding: 18px 4px;
-  border-bottom: 1px solid var(--rule);
-}
-.name-list__num {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  min-width: 36px;
-}
-.name-list__name {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 2.2vw, 26px);
-  color: var(--ink);
-  line-height: 1.25;
-}
-
-/* ── Feature list (Offering deployment + enterprise) ──────
- * Vertical list of feature title + description inside the reading
- * column. Keeps the platform/enterprise sections rhythmically
- * consistent with the surrounding 720px-ish reading column. */
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--rule);
-}
-.feature-list__item {
-  display: grid;
-  gap: 4px;
-  padding: 22px 4px;
-  border-bottom: 1px solid var(--rule);
-}
-.feature-list__item h3 {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--ink);
-  margin: 0;
-}
-.feature-list__item p {
-  color: var(--ink-soft);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* ── Trio (homepage "what Mokshly is") ────────────────────── */
-
-.trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 32px;
-}
-@media (max-width: 560px) { .trio { grid-template-columns: 1fr; } }
-.trio-item {
-  padding: 14px 16px;
-  background: var(--bg-raised);
-  border-left: 2px solid var(--accent);
-}
-.trio-item .label {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 4px;
-  font-weight: 500;
-}
-.trio-item .name {
-  font-family: var(--font-serif);
-  font-size: 16px;
-  line-height: 1.25;
-  color: var(--ink);
-  margin: 0;
-}
-/* trio--compact is on by default now; modifier retained for future tuning */
-.trio--compact { gap: 12px; }
-.trio--compact .trio-item { padding: 12px 14px; }
-.trio--compact .trio-item .name { font-size: 15.5px; }
-
 /* ── Founder note ──────────────────────────────────────────── */
 
 /* Align the founder note with the other read-width sections (same column and
@@ -1154,19 +864,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 /* ── Utility ──────────────────────────────────────────────── */
 
 .center { text-align: center; }
-.mt-sm { margin-top: 16px; }
 .mt-md { margin-top: 28px; }
 .mt-lg { margin-top: 48px; }
 .mt-xl { margin-top: 72px; }
-.mb-sm { margin-bottom: 16px; }
 .mb-md { margin-bottom: 28px; }
-
-.divider-soft {
-  height: 1px;
-  background: var(--rule);
-  border: 0;
-  margin: 24px 0;
-}
 
 /* Accessibility — visible focus rings */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {

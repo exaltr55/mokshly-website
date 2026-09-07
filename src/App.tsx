@@ -1,7 +1,8 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import YouSourceful from './pages/YouSourceful';
 import OurOffering from './pages/OurOffering';
 import About from './pages/About';
 import Manifesto from './pages/Manifesto';
@@ -36,6 +37,8 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/yousourceful" element={<YouSourceful />} />
+        <Route path="/yousourceful/learn-more" element={<Navigate to="/yousourceful" replace />} />
         <Route path="/our-offering" element={<OurOffering />} />
         <Route path="/about" element={<About />} />
         <Route path="/manifesto" element={<Manifesto />} />

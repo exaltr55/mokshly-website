@@ -19,13 +19,13 @@ export default function Contact() {
       />
 
       {/* Hero */}
-      <section className="section">
-        <div className="container--read">
-          <h1 className="display-xl mb-md">Get in touch</h1>
+      <section className="hero">
+        <div className="hero__inner">
+          <h1 className="display-xl mb-md">Get in touch.</h1>
           <p className="lede">
-            Whether you're strengthening your people for the age of AI, or
-            simply want to understand our work more deeply, we welcome the
-            conversation.
+            If you're exploring how to strengthen human capability across your
+            organization — or simply want to understand our work more deeply —
+            we welcome the conversation.
           </p>
         </div>
       </section>
@@ -36,14 +36,11 @@ export default function Contact() {
           <p className="eyebrow">For Enterprises</p>
           <h2 className="display-lg mb-md">Schedule a Leadership Conversation</h2>
           <p className="lede mb-md">
-            If your organization is investing in AI — the technology and the
-            training to use it — and wants to maximize the return on both, we
-            welcome a leadership conversation.
+            Start with a 30-minute conversation about your organization, your
+            people and what you're navigating.
           </p>
           <p className="lede" style={{ marginBottom: 36 }}>
-            Conversations typically begin with 30 minutes — understanding your
-            context, your people, and what you are building. From there, we
-            shape what comes next.
+            From there, we shape what comes next.
           </p>
 
           {submitted ? (
@@ -105,16 +102,19 @@ export default function Contact() {
         <div className="container--read">
           <p className="eyebrow">For Everything Else</p>
           <h2 className="display-lg mb-md">Reach us directly.</h2>
-          <p className="lede">
-            For press inquiries, potential partnerships, or any other reason you
-            might be writing — reach us at{' '}
+          <p className="lede mb-md">
+            For press inquiries, potential partnerships or anything else, reach
+            us at{' '}
             <a
               href="mailto:support@mokshly.com"
               style={{ color: 'var(--accent)', borderBottom: '1px solid color-mix(in srgb, var(--accent) 30%, transparent)' }}
             >
               support@mokshly.com
             </a>
-            . We read every message, and we respond personally.
+            .
+          </p>
+          <p className="lede">
+            We read every message and respond personally.
           </p>
         </div>
       </section>

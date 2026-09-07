@@ -7,7 +7,7 @@ export default function Logo({ height = 30 }: { height?: number }) {
   return (
     <img
       src="/logo.png"
-      alt="Mokshly"
+      alt=""
       className="brand-logo"
       style={{ height, width: 'auto', display: 'block' }}
     />

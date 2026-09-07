@@ -213,12 +213,12 @@ export default function Manifesto() {
         <div className="container--read center">
           <p className="eyebrow">From Words to Work</p>
           <h2 className="display-lg mb-md">Let's begin the work.</h2>
-          <p className="lede mb-md" style={{ margin: '0 auto 32px' }}>
+          <p className="lede mb-md" style={{ margin: '0 auto 36px' }}>
             If this resonates with what your organization is navigating, we
             welcome the conversation.
           </p>
           <Link to="/contact#enterprise" className="btn">
-            Schedule a Leadership Conversation
+            Schedule a Leadership Conversation →
           </Link>
         </div>
       </section>
