@@ -494,7 +494,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .hero__inner {
   max-width: var(--maxw-read);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(24px, 6vw, 72px);
   text-align: left;
 }
 .hero h1 { margin-bottom: 28px; }
