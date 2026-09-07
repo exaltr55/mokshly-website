@@ -20,9 +20,9 @@
   --font-serif: 'Fraunces', 'Tiempos Headline', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 
-  --maxw: 1280px;
-  --maxw-read: 780px;
-  --maxw-manifesto: 640px;
+  --maxw: 1400px;
+  --maxw-read: 880px;
+  --maxw-manifesto: 680px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -85,13 +85,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
   margin: 0 auto;
   /* Generous, responsive side gutters — matches the roomy Anthropic feel
      on wide screens while staying comfortable on phones. */
-  padding: 0 clamp(20px, 4vw, 40px);
+  padding: 0 clamp(24px, 6vw, 72px);
 }
 
 .container--read {
   max-width: var(--maxw-read);
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 40px);
+  padding: 0 clamp(24px, 6vw, 72px);
 }
 
 .section {
@@ -227,7 +227,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
 .site-header__inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 11px 24px;
+  padding: 11px clamp(24px, 6vw, 72px);
   display: flex;
   align-items: center;
   justify-content: space-between;
